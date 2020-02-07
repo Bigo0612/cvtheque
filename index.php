@@ -14,3 +14,5 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
 
 }
 die($return);
+
+
