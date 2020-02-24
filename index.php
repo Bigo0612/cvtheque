@@ -12,19 +12,19 @@ require('inc/pdo.php');
 
 $article = $pdo->query('SELECT title FROM article ORDER BY id DESC');
 
-if (isset($_GET['q']) AND !empty($_GET['q'])) {
-    $q = htmlspecialchars($_GET['q']);
+if (isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
+    $recherche = htmlspecialchars($_GET['recherche']);
 
-    $article = $pdo->query('SELECT title FROM article WHERE title LIKE "%' . $q . '%" ORDER BY is DESC');
+    $article = $pdo->query('SELECT title FROM article WHERE title LIKE "%' . $recherche . '%" ORDER BY is DESC');
 
     if ($article->rowCount() == 0) {
-        $article = $pdo->query('SELECT title FROM article WHERE CONCAT(title, contenu) LIKE "%' . $q . '%" ORDER BY is DESC');
+        $article = $pdo->query('SELECT title FROM article WHERE CONCAT(title, contenu) LIKE "%' . $recherche . '%" ORDER BY is DESC');
     }
 }
 ?>
 
 <form action="GET">
-    <input type="search" name="q" placeholder="CV..."/>
+    <input type="search" name="recherche" placeholder="CV..."/>
     <input type="submit" value="Valider"/>
 </form>
 <?php
@@ -35,7 +35,7 @@ if ($article->rowCount() > 0) { ?>
         <?php } ?>
     </ul>
 <?php } else { ?>
-    <?= $q ?>
+    <?= $recherche ?>
 <?php } ?>
 </body>
 </html>
@@ -51,7 +51,7 @@ if ($article->rowCount() > 0) { ?>
 <?php
 define('PROJECT_FOLDER', getcwd());
 define('SRC_FOLDER', PROJECT_FOLDER . '/src/');
-$return = 'NOP';
+$return = 'NOPE';
 
 if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_GET['controller'] . 'Controller.php')) {
     require_once(SRC_FOLDER . '/Controllers/' . $_GET['controller'] . 'Controller.php');
