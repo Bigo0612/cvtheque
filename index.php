@@ -1,5 +1,7 @@
 <?php
 
+include ('inc/header.php');
+
 define('PROJECT_FOLDER', getcwd());
 define('SRC_FOLDER', PROJECT_FOLDER . '/src/');
 $return = 'NOP';
@@ -13,4 +15,10 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
     $return = method_exists($controller, $targetMethod) ? $controller->$targetMethod() : '';
 
 }
-die($return);
+//die($return);
+?>
+
+<script src="asset/js/main.js"></script>
+<script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
+
+</html>
