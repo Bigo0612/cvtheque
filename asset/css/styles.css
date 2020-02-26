@@ -9,8 +9,13 @@ body {
 
 /*/////////////////////////// Header ////////////////////////////// */
 
-header {
+
+
+.navbar {
     background-color: #2C2C2C;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .logo {
@@ -30,6 +35,7 @@ header {
     background: #0F0F0F;
     border: none;
     border-radius: 3px 0px 0px 3px;
+    color: #fff;
 }
 
 .searchJob::placeholder {
@@ -152,6 +158,7 @@ hr {
     border: none;
     font-size: 2em;
     border-radius: 5px 0px 0px 5px;
+    color: #fff;
 }
 
 .searchJob2::placeholder {
