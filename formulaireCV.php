@@ -11,7 +11,7 @@ $array = array(
     array('name' => 'email', 'type' => 'mail', 'h3' => 'votre email'),
     array('name' => 'tel', 'type' => 'tel', 'h3' => 'votre numero de telephone'),
     array('name' => 'adress', 'type' => 'text', 'h3' => 'votre adresse'),
-    array('name' => 'about', 'type' => 'text', 'h3' => 'votre nom'),
+    array('name' => 'about', 'type' => 'text', 'h3' => 'vos motivation'),
     array('name' => 'exp_pro', 'type' => 'text', 'h3' => 'vos experiences professionnelle'),
     array('name' => 'exp_d', 'type' => 'date', 'h3' => 'date du début'),
     array('name' => 'exp_f', 'type' => 'date', 'h3' => 'date de fin'),
