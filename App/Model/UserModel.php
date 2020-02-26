@@ -1,8 +1,11 @@
 <?php
 
-namespace src\model;
+namespace App\Model;
 
-class User
+use App\Service\Model;
+use App\App;
+
+class UserModel extends Model
 {
     private int $id;
     private $name;
@@ -13,6 +16,34 @@ class User
     private $modified_at;
     private $roles;
     private $token;
+
+    public static function insertUser($name, $firstname, $mail, $password)
+    {
+        $token = UserModel::generateToken();
+        $sql = "INSERT INTO " . self::getTable() . " VALUES (NULL,?,?,?,?,NOW(),NULL, 'user',".$token.")";
+        return App::getDatabase()->prepareInsert($sql,[$name, $firstname, $mail, $password]);
+    }
+    //
+    public static function update($id,$post)
+    {
+        $sql = "UPDATE ". self::getTable() ." SET email = ?,nom = ?,fruit_id = ?, modified_at = NOW() WHERE id = ?";
+        return App::getDatabase()->prepareInsert($sql,[$post['name'],$post['firstname'],$post['mail'],
+            $post['password'], $post['created_at'], $post['modified_at'], $post['roles'], $post['token']]);
+    }
+
+    public static function generateToken()
+    {
+        $token = '';
+        $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
+        for ($i=0; $i < 255 ; $i++) {
+            $token .= $chaine[rand(0,mb_strlen($chaine) -1)];
+        }
+        return $token;
+    }
+
+    public static function passHash() {
+
+    }
 
     public function getID($id)
     {

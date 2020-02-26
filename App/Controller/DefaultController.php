@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Weblitzer\Controller;
+use App\Service\Controller;
 
 /**
  *
@@ -12,7 +12,7 @@ class DefaultController extends Controller
 
     public function index()
     {
-        $message = 'Bienvenue sur le framework MVC';
+        $message = 'CVTEK';
 
         $this->render('app.default.frontpage',array(
             'message' => $message,

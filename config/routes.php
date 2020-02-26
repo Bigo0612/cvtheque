@@ -9,6 +9,10 @@ if($page == 'home') {
     $controller = new App\Controller\DefaultController();
     $controller->index();
 }
+elseif ($page == 'register') {
+    $controller = new App\Controller\UserController();
+    $controller->index();
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();
