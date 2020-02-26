@@ -2,10 +2,12 @@
 
 body {
     background: #0F0F0F;
-    font-size: 13px;
+    font-size: 0.8em;
     color: #ffffff;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+/*/////////////////////////// Header ////////////////////////////// */
 
 header {
     background-color: #2C2C2C;
@@ -43,7 +45,7 @@ header {
 }
 
 .btn2 i {
-    font-size: 10px;
+    font-size: 0.8em;
     color: #fff;
 }
 
@@ -97,6 +99,106 @@ header {
 
 
 
+/*/////////////////////////// Index ////////////////////////////// */
+
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.frame {
+    background-color: #2C2C2C;
+    margin-top: 100px;
+    padding-bottom: 80px;
+}
+
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.logo2 img {
+    max-width: 100%;
+    width: 10%;
+}
+
+hr {
+    width: 80%;
+    border: 1px solid #00BCE9;
+}
+
+.research_question {
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    padding: 20px;
+}
+
+.main_search {
+    display: flex;
+    justify-content: center;
+    padding: 20PX;
+}
+
+.main_search input {
+    padding: 20px;
+    max-width: 100%;
+    width: 80%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.searchJob2::placeholder {
+    color: white;
+}
+
+.btn4 {
+    padding: 25px;
+    background: #0F0F0F;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.btn4 i {
+    font-size: 2em;
+    color: #fff;
+}
+
+/*/////////////////////////// Footer ////////////////////////////// */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #2C2C2C;
+    padding-top: 10px;
+    margin-top: 100px;
+}
+
+.foot {
+    background: #0F0F0F;
+    padding: 10px 80px 10px 80px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+
+.foot p {
+    margin-left: 125px;
+    padding-bottom: 10px;
+}
+
+.foot a {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1em;
+}
 
 
 

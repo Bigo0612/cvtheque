@@ -1,6 +1,9 @@
 <?php
 
+//session_start();
 include ('inc/header.php');
+//require('inc/function.php');
+//$title = ' cvtheque';
 
 define('PROJECT_FOLDER', getcwd());
 define('SRC_FOLDER', PROJECT_FOLDER . '/src/');
@@ -18,7 +21,32 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
 //die($return);
 ?>
 
-<script src="asset/js/main.js"></script>
-<script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
+<section class="research">
+    <div class="wrap">
+        <div class="frame">
+            <div class="research_executive">
+                <a class="logo2" href="index.html"><img src="asset/img/logo.png" alt=""></a>
+                <hr>
+                <div class="research_question">
+                    <p>Que recherchez vous?</p>
+                </div>
+                <form class="form">
+                    <div class="main_search">
+                        <input type="text" class="searchJob2" placeholder="Search jobs">
+                        <div class="btn3">
+                            <button class="btn4" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</section>
 
-</html>
+<?php include('inc/footer.php');
+
+
+
