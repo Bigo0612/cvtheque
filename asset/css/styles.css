@@ -207,6 +207,51 @@ footer {
     font-size: 1em;
 }
 
+/* ///////////////////////////////// Inscription ///////////////////////////////////// */
+
+.inscrip {
+    display: flex;
+    justify-content: center;
+    padding: 20PX;
+}
+
+.inscrip input {
+    padding: 20px;
+    max-width: 100%;
+    width: 80%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 0px 0px 5px;
+    color: #fff;
+}
+
+.lab {
+    display: flex;
+    justify-content: center;
+}
+
+.cgu {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+}
+
+.cgu a {
+    color: #fff;
+}
+
+input[type="checkbox" i] {
+    margin: 10px 0px 0px 10px;
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 
 
 
