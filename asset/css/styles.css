@@ -252,6 +252,44 @@ input[type="checkbox" i] {
     margin-top: 20px;
 }
 
+/* ///////////////////////////////// Base CV ///////////////////////////////////// */
+
+.label {
+    display: flex;
+    margin-top: 110px;
+    margin-bottom: -30px;
+}
+
+.lab2 {
+    padding: 0px 170px 0px 255px;
+    font-size: 2em;
+}
+
+.inscrip2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.inscrip2 input {
+    max-width: 100%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+}
+
+.searchJob2 {
+    width: 40%;
+    margin: 0px 30px 0px 30px;
+}
+
+.Arround {
+    background-color: #2C2C2C;
+    padding: 20px;
+    margin: 40px 0px 40px 0px;
+}
 
 
 
