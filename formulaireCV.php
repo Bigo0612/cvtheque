@@ -272,7 +272,7 @@ $formcv = new \src\services\FormCV($errors);
         }
     })
     $('#img14').on('click',function(){
-        var recup = $('div#qualifications input[type=text][name="comp[]"]').length;
+        var recup = $('div#qualifications input[type=text][name="comp[]"]');
         console.log(recup)
         if($('input[name="comp[]"]').val() == ''){
 
@@ -282,12 +282,14 @@ $formcv = new \src\services\FormCV($errors);
                 $('#moin').remove();
                 $('#title14').html('Competances <img src="assets/img/icons8-coche-26.png" />')
             })
-            var text = $('input[name="comp[]"]').val();
-            if (text != '') {
-                $('#bravo').append('<p>' + text + '</p>');
-            } else {
 
-            }
+            var text = $('input[name="comp[]"]').each(function(){
+                if (text != '') {
+                    $('#bravo').append('<p>' + $(this).val() + '</p>');
+                } else {
+
+                }
+            });
         }
     })
     $('#ajout_comp').on('click',function(){
@@ -295,7 +297,7 @@ $formcv = new \src\services\FormCV($errors);
 
         $('#moin').remove();
         $('#img14').after('<img id="moin" src="assets/img/icons8-effacer-26.png"/>');
-           if($('#ajout_comp').before('<input id="nom'+total+'" name="comp[]" type="text" value=""/>') == ''){
+           if($('#ajout_comp').before('<input id="nom'+total+'" name="comp[]" type="text" value=""/><span class="error"></span>') == ''){
 
         } else {
                $('#moin').on('click', function () {
