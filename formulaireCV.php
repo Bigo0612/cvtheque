@@ -26,8 +26,8 @@ $array = array(
     array('name' => 'diplome_a', 'type' => 'date', 'h3' => 'l\année de l\'obtention du diplome', 'img' => 'img11', 'id_title' => 'title12'),
     array('name' => 'diplome_l', 'type' => 'text', 'h3' => 'l\'établissement', 'img' => 'img12', 'id_title' => 'title13'),
     array('name' => 'comp[]', 'type' => 'text', 'h3' => 'vos compétances', 'img' => 'img14', 'id_title' => 'title14'),
-    array('name' => 'lang', 'type' => 'text', 'h3' => 'le niveau et langues métrisées', 'img' => 'img15', 'id_title' => 'title15'),
-    array('name' => 'hob', 'type' => 'text', 'h3' => 'vos hobbys', 'img' => 'img16', 'id_title' => 'title16')
+    array('name' => 'lang[]', 'type' => 'text', 'h3' => 'le niveau et langues métrisées', 'img' => 'img15', 'id_title' => 'title15'),
+    array('name' => 'hob[]', 'type' => 'text', 'h3' => 'vos hobbys', 'img' => 'img16', 'id_title' => 'title16')
 );
 if(!empty($_POST['submitted'])) {
     for ($i=0; $i < count($array); $i++) {
@@ -117,6 +117,7 @@ $formcv = new \src\services\FormCV($errors);
          $html .= $formcv->label('diplome_aj','image2');
          $html .= '</div>';
             } elseif ($array[$i]['name'] === 'comp[]'){
+         $html .= '<div id="qualifications">';
          $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
          $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
          $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
@@ -124,7 +125,8 @@ $formcv = new \src\services\FormCV($errors);
          $html .= '<div id="ajout_comp">';
          $html .= $formcv->label('comp_aj','image2');
          $html .= '</div>';
-            } elseif ($array[$i]['name'] === 'lang'){
+         $html .= '</div>';
+            } elseif ($array[$i]['name'] === 'lang[]'){
          $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
          $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
          $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
@@ -132,7 +134,7 @@ $formcv = new \src\services\FormCV($errors);
          $html .= '<div id="ajout_lang">';
          $html .= $formcv->label('lang_aj','image2');
          $html .= '</div>';
-            } elseif ($array[$i]['name'] === 'hob'){
+            } elseif ($array[$i]['name'] === 'hob[]'){
          $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
          $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
          $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
@@ -270,14 +272,17 @@ $formcv = new \src\services\FormCV($errors);
         }
     })
     $('#img14').on('click',function(){
-        if($('#comp').val() == ''){
+        var recup = $('div#qualifications input[type=text][name="comp[]"]').length;
+        console.log(recup)
+        if($('input[name="comp[]"]').val() == ''){
 
         }else {
             $(this).fadeOut(500, function () {
-                $('input[type=text][name=comp]').remove()
+                $('input[name="comp[]"]').remove()
+                $('#moin').remove();
                 $('#title14').html('Competances <img src="assets/img/icons8-coche-26.png" />')
             })
-            var text = $('input[type=text][name=comp]').val();
+            var text = $('input[name="comp[]"]').val();
             if (text != '') {
                 $('#bravo').append('<p>' + text + '</p>');
             } else {
@@ -287,7 +292,20 @@ $formcv = new \src\services\FormCV($errors);
     })
     $('#ajout_comp').on('click',function(){
         var total = $('input[name="comp[]"]').length;
-            $('#ajout_comp').before('<input id="nom'+total+'" name="comp[]" type="text"/><label name="image6"><img id="plus'+total+'" src="assets/img/plus.png"/><img id="moin'+total+'" src="assets/img/icons8-effacer-26.png"/> </label>')
 
-    })
+        $('#moin').remove();
+        $('#img14').after('<img id="moin" src="assets/img/icons8-effacer-26.png"/>');
+           if($('#ajout_comp').before('<input id="nom'+total+'" name="comp[]" type="text" value=""/>') == ''){
+
+        } else {
+               $('#moin').on('click', function () {
+                   if ($('input[name="comp[]"]').length == 1) {
+                        $('#moin').remove();
+                   } else {
+                           $('input[name="comp[]"]:last').remove();
+                   }
+               })
+           }
+        })
+
 </script>
