@@ -50,96 +50,149 @@ class UserModel extends Model
         return $randomString;
     }
 
-    public function getID($id)
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
-        return $this->$id;
+        return $this->id;
     }
 
-    public function setId($id)
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
     {
         $this->id = $id;
-        return $this;
     }
 
-    public function getName($name)
+    /**
+     * @return mixed
+     */
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setName($name)
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
     {
         $this->name = $name;
-        return $this;
     }
 
-    public function getFistname($fistname)
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
     {
         return $this->firstname;
     }
 
-    public function getMail($mail)
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMail()
     {
         return $this->mail;
     }
 
-    public function setMail($mail)
+    /**
+     * @param mixed $mail
+     */
+    public function setMail($mail): void
     {
         $this->mail = $mail;
-        return $this;
     }
 
-    public function getPassword($password)
+    /**
+     * @return mixed
+     */
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword($password)
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
     {
         $this->password = $password;
-        return $this;
     }
 
-    public function getCreatedAt($created_at)
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
 
-    public function setCreatedAt($created_at)
+    /**
+     * @param mixed $created_at
+     */
+    public function setCreatedAt($created_at): void
     {
         $this->created_at = $created_at;
-        return $this;
     }
 
-    public function getModifiedAt($modified_at)
+    /**
+     * @return mixed
+     */
+    public function getModifiedAt()
     {
         return $this->modified_at;
     }
 
-    public function setModifiedAt($modified_at)
+    /**
+     * @param mixed $modified_at
+     */
+    public function setModifiedAt($modified_at): void
     {
         $this->modified_at = $modified_at;
-        return $this;
     }
 
-    public function getRoles($roles)
+    /**
+     * @return mixed
+     */
+    public function getRole()
     {
         return $this->roles;
     }
 
-    public function setRoles($roles)
+    /**
+     * @param mixed $roles
+     */
+    public function setRole($roles): void
     {
         $this->roles = $roles;
-        return $this;
     }
 
-    public function getToken($token)
+    /**
+     * @return mixed
+     */
+    public function getToken()
     {
         return $this->token;
     }
 
-    public function setToken($token)
+    /**
+     * @param mixed $token
+     */
+    public function setToken($token): void
     {
         $this->token = $token;
-        return $this;
     }
+
+
 }
