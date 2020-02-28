@@ -13,6 +13,8 @@
         <ul>
             <li><a href="<?= $view->path('home'); ?>">Home</a></li>
             <li><a href="<?= $view->path('register'); ?>">Inscription</a></li>
+            <li><a href="<?= $view->path('login'); ?>">Connexion</a></li>
+
         </ul>
     </nav>
 </header>

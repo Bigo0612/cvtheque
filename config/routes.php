@@ -11,7 +11,11 @@ if($page == 'home') {
 }
 elseif ($page == 'register') {
     $controller = new App\Controller\UserController();
-    $controller->index();
+    $controller->register();
+}
+elseif ($page == 'login') {
+    $controller = new \App\Controller\UserController();
+    $controller->login();
 }
 else {
     $controller = new App\Controller\DefaultController();

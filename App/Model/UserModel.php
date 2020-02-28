@@ -2,11 +2,13 @@
 
 namespace App\Model;
 
+use App\Service\Database;
 use App\Service\Model;
 use App\App;
 
 class UserModel extends Model
 {
+    protected static $table = 'users';
     private int $id;
     private $name;
     private $firstname;
@@ -17,32 +19,35 @@ class UserModel extends Model
     private $roles;
     private $token;
 
-    public static function insertUser($name, $firstname, $mail, $password)
+    public static function insertUser(string $name, string $firstname, string $mail, string $password): void
     {
-        $token = UserModel::generateToken();
-        $sql = "INSERT INTO " . self::getTable() . " VALUES (NULL,?,?,?,?,NOW(),NULL, 'user',".$token.")";
-        return App::getDatabase()->prepareInsert($sql,[$name, $firstname, $mail, $password]);
+        $token = UserModel::generateToken(255);
+        $sql = "INSERT INTO " . self::getTable() . " VALUES(NULL,?,?,?,?,NOW(),NULL,'user',?)";
+        App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $token]);
     }
-    //
-    public static function update($id,$post)
+
+    public static function userLogin(string $email)
+    {
+        $sql = "SELECT * FROM " . self::getTable() . " WHERE email= ?";
+        return App::getDatabase()->prepare($sql, [$email], get_called_class(),true);
+    }
+
+    public static function update($id,$post): void
     {
         $sql = "UPDATE ". self::getTable() ." SET email = ?,nom = ?,fruit_id = ?, modified_at = NOW() WHERE id = ?";
-        return App::getDatabase()->prepareInsert($sql,[$post['name'],$post['firstname'],$post['mail'],
+        App::getDatabase()->prepareInsert($sql,[$post['name'],$post['firstname'],$post['mail'],
             $post['password'], $post['created_at'], $post['modified_at'], $post['roles'], $post['token']]);
     }
 
-    public static function generateToken()
+    public static function generateToken($length)
     {
-        $token = '';
-        $chaine = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
-        for ($i=0; $i < 255 ; $i++) {
-            $token .= $chaine[rand(0,mb_strlen($chaine) -1)];
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
-        return $token;
-    }
-
-    public static function passHash() {
-
+        return $randomString;
     }
 
     public function getID($id)

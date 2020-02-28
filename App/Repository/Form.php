@@ -1,5 +1,5 @@
 <?php
-namespace App\Service;
+namespace App\Repository;
 /**
  *  class Form
  *  Permet de generer un formulaire
@@ -87,9 +87,9 @@ class Form
      * @param $name
      * @return string
      */
-    public function label($name)
+    public function label($name, $label)
     {
-        return '<label for="'.$name.'">'.ucfirst($name).'</label>';
+        return '<label for="'.$name.'">'.ucfirst($label).'</label>';
     }
 
     /**
@@ -106,6 +106,11 @@ class Form
         }
         $html .= '</select>';
         return $html;
+    }
+
+    public function inputCheckbox($type,$name, $value)
+    {
+        return $this->arround('<input type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$value.'">');
     }
 
 }
