@@ -42,33 +42,39 @@ class Form
 
     }
     /**
+     * @param $type string
+     * @param $class string
      * @param $name string
      * @return string
      */
-    public function input($type,$name,$data = null)
+    public function input($type,$name,$class = NULL,$data = null)
     {
-        return $this->arround('<input type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$this->getValue($name,
+        return $this->arround('<input class="'.$class.'" type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'
+            .$this->getValue
+            ($name,
                 $data).'">');
     }
 
     /**
      * @param $name
+     * @param $class string
      * @param null $data
      * @return string
      */
-    public function textarea($name, $data = null)
+    public function textarea($name, $class = NULL, $data = null)
     {
-        return $this->arround('<textarea name="'.$name.'">'.$this->getValue($name,$data).'</textarea>');
+        return $this->arround('<textarea class="'.$class.'" name="'.$name.'">'.$this->getValue($name,$data).'</textarea>');
     }
 
     /**
      * @param $name string
+     * @param $class string
      * @param $value string
      * @return string
      */
-    public function submit($name = 'submitted',$value='Envoyer')
+    public function submit($name = 'submitted',$value='Envoyer',$class = NULL)
     {
-        return '<input type="submit" name="'.$name.'" id="'.$name.'" value="'.$value.'">';
+        return '<input type="submit" name="'.$name.'" class="'.$class.'" id="'.$name.'" value="'.$value.'">';
     }
 
     /**
@@ -85,22 +91,24 @@ class Form
 
     /**
      * @param $name
+     * @param $class string
      * @return string
      */
-    public function label($name, $label)
+    public function label($name,$label,$class=NULL )
     {
-        return '<label for="'.$name.'">'.ucfirst($label).'</label>';
+        return '<label for="'.$name.'" class="'.$class.'">'.ucfirst($label).'</label>';
     }
 
     /**
      * @param $name
+     * @param $class string
      * @param $entitys
      * @param $column
      * @return string
      */
-    public function select($name, $entitys, $column, $idd = 'id')
+    public function select($name, $entitys, $column, $idd = 'id', $class = NULL)
     {
-        $html = '<select name="'.$name.'">';
+        $html = '<select name="'.$name.'" class="'.$class.'">';
         foreach ($entitys as $entity) {
             $html .= '<option value="'.$entity->$idd.'">'.$entity->$column.'</option>';
         }
@@ -108,9 +116,20 @@ class Form
         return $html;
     }
 
-    public function inputCheckbox($type,$name, $value)
+    public function inputCheckbox($type,$name,$value,$class=NULL)
     {
-        return $this->arround('<input type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$value.'">');
+        return $this->arround('<input type="'.$type.'" id="'.$name.'" name="'.$name.'" class="'.$class.'" value="'
+            .$value.'">');
+    }
+
+    public function divStart($class=NULL)
+    {
+        return '<div class="'.$class.'">';
+    }
+
+    public function divEnd()
+    {
+        return '</div>';
     }
 
 }

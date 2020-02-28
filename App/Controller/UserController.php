@@ -43,7 +43,8 @@ class UserController extends Controller
 
         $this->render('app.default.register', array(
             'title' => $title,
-            'form' => $form
+            'form' => $form,
+            'errors' => $errors
         ));
     }
 

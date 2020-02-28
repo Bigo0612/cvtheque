@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Framework POO</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/styles.css">
 </head>
 <body>
 
@@ -14,7 +14,6 @@
             <li><a href="<?= $view->path('home'); ?>">Home</a></li>
             <li><a href="<?= $view->path('register'); ?>">Inscription</a></li>
             <li><a href="<?= $view->path('login'); ?>">Connexion</a></li>
-
         </ul>
     </nav>
 </header>
@@ -27,6 +26,6 @@
 
 </footer>
 
-<script src="asset/js/main.js"></script>
+<script src="../public/assets/js/main.js"></script>
 </body>
 </html>
