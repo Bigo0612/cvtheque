@@ -9,16 +9,6 @@ use App\Repository\Validation;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-
-    }
-
-    public function listing()
-    {
-
-    }
-
     public function register()
     {
         $title = 'Inscription';

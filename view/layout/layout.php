@@ -28,13 +28,13 @@
 
             <ul class="navbar2">
                 <li class="contact">
-                    <a class="job-contact" href="contact.php">
+                    <a class="job-contact" href="<?= $view->path('contact'); ?>">
                         <i class="fas fa-pencil-alt"></i>
                         <span class="contact-me">Contact</span></a>
                 </li>
 
                 <li class="nav-job">
-                    <a class="job-link" href="jobs.php">
+                    <a class="job-link" href="<?= $view->path('jobs'); ?>">
                         <i class="fas fa-briefcase"></i>
                         <span class="jobs">Jobs</span></a>
 
@@ -50,15 +50,13 @@
                 </li>
 
                 <li class="inscription">
-                    <a  href="inscription.php">
-                        <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
+                        <a class="inscription-link" href="<?= $view->path('register'); ?>">
                         <i class="fas fa-user-friends"></i>
                         <span class="inscript">Inscription</span></a>
                 </li>
 
                 <li class="connexion">
-                    <a  href="connexion.php">
-                        <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
+                        <a class="connexion-link" href="<?= $view->path('login'); ?>">
                         <span class="connex">Connexion</span></a>
                 </li>
                 <li><a href="<?= $view->path('cv'); ?>">CV</a></li>
