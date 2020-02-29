@@ -28,7 +28,7 @@ class CvController extends Controller
             array('name' => 'exp_f', 'type' => 'date', 'h3' => 'date de fin', 'img' => 'img9', 'id_title' => 'title9'),
             array('name' => 'exp_l', 'type' => 'text', 'h3' => 'le nom de l\'établissement', 'img' => 'img10', 'id_title' => 'title10'),
             array('name' => 'diplome', 'type' => 'text', 'h3' => 'vos diplomes', 'img' => 'img13', 'id_title' => 'title11'),
-            array('name' => 'diplome_a', 'type' => 'date', 'h3' => 'l\année de l\'obtention du diplome', 'img' => 'img11', 'id_title' => 'title12'),
+            array('name' => 'diplome_a', 'type' => 'date', 'h3' => 'l\'année de l\'obtention du diplome', 'img' => 'img11', 'id_title' => 'title12'),
             array('name' => 'diplome_l', 'type' => 'text', 'h3' => 'l\'établissement', 'img' => 'img12', 'id_title' => 'title13'),
             array('name' => 'comp[]', 'type' => 'text', 'h3' => 'vos compétances', 'img' => 'img14', 'id_title' => 'title14'),
             array('name' => 'lang[]', 'type' => 'text', 'h3' => 'le niveau et langues métrisées', 'img' => 'img15', 'id_title' => 'title15'),

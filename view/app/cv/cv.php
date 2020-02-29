@@ -1,3 +1,4 @@
+<?php phpinfo()?>
 <h1>
     <?= $title ?>
 </h1>
