@@ -17,6 +17,10 @@ elseif ($page == 'login') {
     $controller = new \App\Controller\UserController();
     $controller->login();
 }
+elseif ($page == 'cv') {
+    $controller = new \App\Controller\CvController();
+    $controller->cv();
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();

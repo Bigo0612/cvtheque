@@ -132,4 +132,10 @@ class Form
         return '</div>';
     }
 
+    public function h3(string $titre,string $id_title)
+    {
+        return '<h3 id="'.$id_title.'">Veuillez rentrer '.$titre.'</h3>';
+    }
+
+
 }

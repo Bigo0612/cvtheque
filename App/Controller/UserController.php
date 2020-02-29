@@ -62,7 +62,6 @@ class UserController extends Controller
 
             if ($v->IsValid($errors) == true) {
                 $user = UserModel::userLogin($post['mail']);
-                $this->debug($user);
                 if ($user->email === $post['mail'] && password_verify($post['password'], $user->pass)) {
                     $_SESSION = array(
                         'id'    => $user->id,
@@ -79,8 +78,6 @@ class UserController extends Controller
         } else {
             $errors['email'] = 'Erreur dans le fomulaire';
         }
-
-        $this->debug($_SESSION);
 
         $this->render('app.default.login', array(
             'title' => $title,
