@@ -16,7 +16,7 @@
                         <input type="text" class="searchJob2" placeholder="Search jobs">
                         <div class="btn3">
                             <button class="btn4" type="button">
-                                <i href="databasecv.php" class="fas fa-search"></i>
+                                <a href="databasecv.php"><i  class="fas fa-search"></i></a>
                             </button>
                         </div>
                     </div>

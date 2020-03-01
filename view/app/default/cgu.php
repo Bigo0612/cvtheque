@@ -1,5 +1,5 @@
 <div class="cgu">
-    <div class="clear"></div>
+
     <h1>Conditions générales d'utilisation
         du site CVTEK</h1>
     <h2>Préambule</h2>
@@ -149,5 +149,7 @@
     <p>Les présentes conditions générales d'utilisation sont soumises à l'application du droit français.
         Si les parties n'arrivent pas à résoudre un litige à l'amiable, le litige sera soumis à la compétence des
         tribunaux français.</p>
-    <a href="register.php?condition=yes"><input id="but" type="button" value="Accepter" name="accepter"></a>
+    <div class="central">
+        <a class="backtosite" href="index.php">Retour au site</a>
+    </div>
 </div>

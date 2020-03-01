@@ -25,6 +25,12 @@ elseif ($page == 'cgu') {
     $controller = new \App\Controller\defaultController();
     $controller->cgu();
 }
+elseif ($page == 'databasecv') {
+    $controller = new \App\Controller\defaultController();
+    $controller->databasecv();
+}
+
+
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();

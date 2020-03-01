@@ -36,4 +36,9 @@ class DefaultController extends Controller
         $this->render('app.default.404');
     }
 
+    public function databasecv()
+    {
+        $this->render('app.default.databasecv',array());
+    }
+
 }

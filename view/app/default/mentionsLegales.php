@@ -1,4 +1,4 @@
-<div class="Mentions-légales">
+<div> class="Mentions-légales">
 
     <div class="title">
         <h2>Informations légales</h2>
@@ -199,3 +199,5 @@
     <div class="central">
         <a class="backtosite" href="index.php">Retour au site</a>
     </div>
+
+</div>
