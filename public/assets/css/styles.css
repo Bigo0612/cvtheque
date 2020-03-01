@@ -175,6 +175,57 @@ hr {
     color: #fff;
 }
 
+/* ///////////////////////////////// Inscription ///////////////////////////////////// */
+
+.inscrip {
+    display: flex;
+    justify-content: center;
+    padding: 20PX;
+}
+
+.inscrip input {
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+}
+
+.lab {
+    display: flex;
+    justify-content: center;
+}
+
+.cgu {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+}
+
+.cgu a {
+    color: #fff;
+}
+
+input[type="checkbox" i] {
+    margin: 10px 0px 0px 10px;
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+}
+
+
+
 /* ///////////////////////////////// Base CV ///////////////////////////////////// */
 
 .label {
@@ -205,7 +256,7 @@ hr {
 
 .searchJob2 {
     width: 40%;
-    margin: 0px 30px 0px 30px;
+    margin: 0px 0px 0px 30px;
 }
 
 .Arround {
