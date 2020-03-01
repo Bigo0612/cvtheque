@@ -18,6 +18,15 @@ class DefaultController extends Controller
             'message' => $message,
         ));
     }
+    public function mentionsLegales()
+    {
+        $this->render('app.default.mentionsLegales',array());
+    }
+
+    public function cgu()
+    {
+        $this->render('app.default.cgu',array());
+    }
 
     /**
      *

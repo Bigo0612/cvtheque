@@ -17,6 +17,14 @@ elseif ($page == 'login') {
     $controller = new \App\Controller\UserController();
     $controller->login();
 }
+elseif ($page == 'mentionsLegales') {
+    $controller = new \App\Controller\defaultController();
+    $controller->mentionsLegales();
+}
+elseif ($page == 'cgu') {
+    $controller = new \App\Controller\defaultController();
+    $controller->cgu();
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();
