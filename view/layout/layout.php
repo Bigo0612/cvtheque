@@ -66,7 +66,13 @@
 </div>
 
 <footer>
-
+    <div class="foot">
+        <p>&copy; 2020 - cvtheque &reg;</p>
+        <a href="index.php">Accueil</a>
+        <a href="contact.php">Contact</a>
+        <a href="cgu.php">CGU</a>
+        <a href="mentions-legales.php">Mentions légales</a>
+    </div>
 </footer>
 
 <script src="../public/assets/js/main.js"></script>

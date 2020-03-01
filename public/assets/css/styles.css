@@ -102,3 +102,33 @@ body {
 .connexion a {
     color: #fff;
 }
+
+/*/////////////////////////// Footer ////////////////////////////// */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #2C2C2C;
+    padding-top: 10px;
+    margin-top: 100px;
+}
+
+.foot {
+    background: #0F0F0F;
+    padding: 10px 80px 10px 80px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+
+.foot p {
+    margin-left: 125px;
+    padding-bottom: 10px;
+}
+
+.foot a {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1em;
+}
