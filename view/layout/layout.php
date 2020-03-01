@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
-    <title>Framework POO</title>
     <link rel="stylesheet" type="text/css" href="../public/assets/css/styles.css">
     <title>cvtheque</title>
 </head>
@@ -13,7 +12,7 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <a class="logo" href="<?= $view->path('home'); ?>"><img src="asset/img/logo.png" alt=""></a>
+            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/logo.png" alt=""></a>
             <form class="form">
                 <div class="search">
                     <input type="text" class="searchJob" placeholder="Search jobs">
@@ -49,16 +48,12 @@
                 </li>
 
                 <li class="inscription">
-                    <a  href="inscription.php">
                         <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
                         <i class="fas fa-user-friends"></i>
-                        <span class="inscript">Inscription</span></a>
                 </li>
 
                 <li class="connexion">
-                    <a  href="connexion.php">
                         <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
-                        <span class="connex">Connexion</span></a>
                 </li>
             </ul>
         </div>
@@ -75,5 +70,6 @@
 </footer>
 
 <script src="../public/assets/js/main.js"></script>
+<script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
 </body>
 </html>

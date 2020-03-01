@@ -1,1 +1,104 @@
 @import "reset.css";
+
+body {
+    background: #0F0F0F;
+    font-size: 0.8em;
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*/////////////////////////// Header ////////////////////////////// */
+
+
+
+.navbar {
+    background-color: #2C2C2C;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    padding: 20px 0px 20px 20px;
+}
+
+.logo img {
+    max-width: 100%;
+    width: 60%;
+}
+
+.search input {
+    float: left;
+    margin-top: 20px;
+    padding: 5px 20px 5px 5px;
+    background: #0F0F0F;
+    border: none;
+    border-radius: 3px 0px 0px 3px;
+    color: #fff;
+}
+
+.searchJob::placeholder {
+    color: white;
+}
+
+.btn {
+    float: left;
+    margin-top: 20px;
+    background: #0F0F0F;
+    padding: 2.5px;
+    border-radius: 0px 5px 5px 0px
+}
+
+.btn2 i {
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.btn2 {
+    padding: 2.5px;
+    background: #0F0F0F;
+    border: none;
+}
+
+.navbar2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact {
+    padding: 25px;
+}
+
+.contact a {
+    color: #fff;
+}
+
+.nav-job {
+    padding: 22px 0px 22px 22px;
+}
+
+.nav-job a {
+    color: #fff;
+}
+
+.divers-jobs {
+    width: 18%;
+    height: 80%;
+}
+
+.inscription {
+    padding: 25px;
+}
+
+.inscription a {
+    color: #fff;
+}
+
+.connexion {
+    padding: 25px;
+}
+
+.connexion a {
+    color: #fff;
+}
