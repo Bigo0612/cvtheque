@@ -103,6 +103,78 @@ body {
     color: #fff;
 }
 
+/*/////////////////////////// frontpage ////////////////////////////// */
+
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.frame {
+    background-color: #2C2C2C;
+    margin-top: 160px;
+    padding-bottom: 80px;
+}
+
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.logo2 img {
+    max-width: 100%;
+    width: 10%;
+}
+
+hr {
+    width: 80%;
+    border: 1px solid #00BCE9;
+}
+
+.research_question {
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    padding: 20px;
+}
+
+.main_search {
+    display: flex;
+    justify-content: center;
+    padding: 20PX;
+}
+
+.main_search input {
+    padding: 20px;
+    max-width: 100%;
+    width: 80%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 0px 0px 5px;
+    color: #fff;
+}
+
+.searchJob2::placeholder {
+    color: white;
+}
+
+.btn4 {
+    padding: 25px;
+    background: #0F0F0F;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.btn4 i {
+    font-size: 2em;
+    color: #fff;
+}
+
 /*/////////////////////////// Footer ////////////////////////////// */
 
 
