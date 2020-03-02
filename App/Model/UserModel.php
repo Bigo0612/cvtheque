@@ -32,13 +32,6 @@ class UserModel extends Model
         return App::getDatabase()->prepare($sql, [$email], get_called_class(),true);
     }
 
-    public static function update($id,$post): void
-    {
-        $sql = "UPDATE ". self::getTable() ." SET email = ?,nom = ?,fruit_id = ?, modified_at = NOW() WHERE id = ?";
-        App::getDatabase()->prepareInsert($sql,[$post['name'],$post['firstname'],$post['mail'],
-            $post['password'], $post['created_at'], $post['modified_at'], $post['roles'], $post['token']]);
-    }
-
     public static function generateToken($length)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

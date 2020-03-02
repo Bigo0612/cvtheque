@@ -36,15 +36,16 @@ class AdminModel extends Model
         App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $token]);
     }
 
-    public function editUser(string $name, string $firstname, string $mail, string $password, $roles)
+    public function editUser(string $name, string $firstname, string $mail, string $password, $roles): void
     {
         $token = UserModel::generateToken(255);
         $sql = "UPDATE " . self::getTable() . "SET name=?, firstname=?, mail=?, pass=?, NULL, NOW(), roles=?, token=?";
         App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $roles, $token]);
     }
 
-    public function deleteUser()
+    public function deleteUser(int $id): void
     {
-        $sql = "";
+        $sql = "DELETE FROM " . self::getTable() . " WHERE id=?";
+        App::getDatabase()->prepare($sql, [$id], get_called_class(), true);
     }
 }
