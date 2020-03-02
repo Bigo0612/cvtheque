@@ -2,7 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
     <title>Framework POO</title>
     <link rel="stylesheet" type="text/css" href="../public/assets/css/styles.css">
@@ -17,7 +17,7 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <a class="logo" href="<?= $view->path('home'); ?>"><img src="asset/img/logo.png" alt=""></a>
+            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/logo.png" alt=""></a>
             <form class="form">
                 <div class="search">
                     <input type="text" class="searchJob" placeholder="Search jobs">
@@ -53,14 +53,17 @@
                 </li>
 
                 <li class="inscription">
-                        <a class="inscription-link" href="<?= $view->path('register'); ?>">
+                    <a  href="inscription.php">
+                        <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
                         <i class="fas fa-user-friends"></i>
                         <span class="inscript">Inscription</span></a>
                 </li>
 
                 <li class="connexion">
-                        <a class="connexion-link" href="<?= $view->path('login'); ?>">
-                        <span class="connex">Connexion</span></a>
+                        <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
+                </li>
+                <li>
+                    <a href="<?= $view->path('admin') ?>">Admin</a>
                 </li>
                 <li><a href="<?= $view->path('cv'); ?>">CV</a></li>
             </ul>
@@ -74,10 +77,17 @@
 </div>
 
 <footer>
-
+    <div class="foot">
+        <p>&copy; 2020 - cvtheque &reg;</p>
+        <a href="index.php">Accueil</a>
+        <a href="contact.php">Contact</a>
+        <a href="<?= $view->path('cgu'); ?>">CGU</a>
+        <a href="<?= $view->path('mentionsLegales'); ?>">Mentions légales</a>
+    </div>
 </footer>
 
 <script src="../public/assets/js/main.js"></script>
+<script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>

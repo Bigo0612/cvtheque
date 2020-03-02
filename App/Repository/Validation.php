@@ -37,7 +37,7 @@ class Validation
     {
         $error = '';
         if(empty($email) || (filter_var($email, FILTER_VALIDATE_EMAIL)) === false) {
-            $error = 'Adresse email invalide.';
+            $error = 'Erreur dans le mail et/ou mdp';
         }
         return $error;
     }
