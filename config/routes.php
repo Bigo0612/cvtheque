@@ -23,6 +23,9 @@ elseif ($page == 'cv') {
 }elseif ($page == 'contact'){
     $controller =new App\Controller\ContactController();
     $controller->contact();
+}elseif ($page == 'answer'){
+    $controller=new App\Controller\AnswerController();
+    $controller->answer();
 }
 else {
     $controller = new App\Controller\DefaultController();

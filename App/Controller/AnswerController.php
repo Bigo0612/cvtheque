@@ -15,17 +15,22 @@ class AnswerController extends Controller
         $title = 'answer';
         $errors =array();
         $form = new Form($errors,'post');
+        $questions = AnswerModel::all();
+
         if (isset($_POST['submitted'])){
             $post = $this->cleanXss($_POST);
-            //get question en basse de donnée (a faire)
             $v = new Validation();
-            $errors['answer'] = $v->textValid($post['answer'],'answer');
-            $errors['question'] = $v->textValid($post['question'],'question',2,500);
+
+            $errors['answer'] = $v->textValid($post['answer'],'answer',2,250);
+
+            if ($v->IsValid($errors)== true){
+                AnswerModel::updateAnswer($post['answer_id'],$post['answer']);
+
+            }
         }
-        if ($v->IsValid($errors)== true){
-            AnswerModel::insertAnswer($post['answer'],$post['question']);
-        }
+
         $this->render('app.default.answer',array(
+            'questions' => $questions,
             'title'=>$title,
             'form'=>$form,
             'errors'=>$errors

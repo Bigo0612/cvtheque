@@ -16,10 +16,12 @@ class AnswerModel extends Model
     private $modified_at;
     private $question;
 
-    public static function insertAnswer(string $answer,string $question){
-        $sql = "INSERT INTO " .self::getTable() . " VALUES(?,?,NOW(),NULL,NULL)";
-        App::getDatabase()->prepareInsert($sql,[$answer,$question]);
+    public static function updateAnswer(int $id, string $answer){
+        $sql = "UPDATE " .self::getTable() . " SET answer = ?, modified_at = NOW() WHERE id=" . $id;
+        App::getDatabase()->prepareInsert($sql,[$answer]);
+
     }
+
 
     /**
      * @return int
