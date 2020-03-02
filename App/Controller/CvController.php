@@ -41,93 +41,100 @@ class CvController extends Controller
 
             if ($array[$i]['type'] === 'tel'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
+                $html .= '<div class="form-control">';
                 $html .= '<input id="tel" name="tel" type="tel" Pattern="^0[0-9]{9}"/>';
-                $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
-                $html .= $formcv->error($array[$i]['name']);
+                $html .= '</div>';
+                $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= $formcv->error2($array[$i]['name']);
             } elseif ($array[$i]['type'] === "about") {
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->textarea($array[$i]['name']);
-                $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
-                $html .= $formcv->error($array[$i]['name']);
+                $html .= $formcv->textarea($array[$i]['name'],'about');
+                $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= $formcv->error2($array[$i]['name']);
+
 
             } elseif ($array[$i]['name'] === 'exp_pro'){
                 $html .= '<div id="experience">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('exp_pro','text');
-                $html .= $formcv->label('exp_pro','img7');
-                $html .= $formcv->error('exp_pro');
+                $html .= $formcv->input('text','exp_pro',);
+                $html .= $formcv->label2('exp_pro','img7');
+                $html .= $formcv->error2('exp_pro');
             } elseif ($array[$i]['name'] === 'exp_d'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('exp_d','date');
-                $html .= $formcv->label('exp_d','img8');
-                $html .= $formcv->error('exp_f');
+                $html .= $formcv->input('date','exp_d');
+                $html .= $formcv->label2('exp_d','img8');
+                $html .= $formcv->error2('exp_f');
             }elseif ($array[$i]['name'] === 'exp_f'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('exp_f','date');
-                $html .= $formcv->label('exp_f','img9');
-                $html .= $formcv->error('exp_f');
+                $html .= $formcv->input('date','exp_f');
+                $html .= $formcv->label2('exp_f','img9');
+                $html .= $formcv->error2('exp_f');
             } elseif ($array[$i]['name'] === 'exp_l') {
                 $html .= $formcv->h3($array[$i]['h3'], $array[$i]['id_title']);
-                $html .= $formcv->input('exp_l', 'text');
-                $html .= $formcv->label('exp_l', 'img10');
-                $html .= $formcv->error('exp_l');
+                $html .= $formcv->input('text','exp_l');
+                $html .= $formcv->label2('exp_l', 'img10');
+                $html .= $formcv->error2('exp_l');
                 $html .= '</div>';
                 $html .= '<div id="ajout_exp">';
-                $html .= $formcv->label('experience_aj','image1');
+                $html .= $formcv->label2('experience_aj','image1');
                 $html .= '</div>';
 
 
             }elseif ($array[$i]['name'] === 'diplome'){
                 $html .= '<div id="exam">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('diplome','text');
-                $html .= $formcv->label('diplome','img11');
-                $html .= $formcv->error('diplome');
+                $html .= $formcv->input('text','diplome');
+                $html .= $formcv->label2('diplome','img11');
+                $html .= $formcv->error2('diplome');
             } elseif ($array[$i]['name'] === 'diplome_a'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('diplome_a','date');
-                $html .= $formcv->label('diplome_a','img12');
-                $html .= $formcv->error('diplome_a');
+                $html .= $formcv->input('date','diplome_a');
+                $html .= $formcv->label2('diplome_a','img12');
+                $html .= $formcv->error2('diplome_a');
             }elseif ($array[$i]['name'] === 'diplome_l'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('diplome_l','text');
-                $html .= $formcv->label('diplome_l','img13');
-                $html .= $formcv->error('diplome_l');
+                $html .= $formcv->input('text','diplome_l');
+                $html .= $formcv->label2('diplome_l','img13');
+                $html .= $formcv->error2('diplome_l');
                 $html .= '</div>';
                 $html .= '<div id="ajout_diplome">';
-                $html .= $formcv->label('diplome_aj','image2');
+                $html .= $formcv->label2('diplome_aj','image2');
                 $html .= '</div>';
             } elseif ($array[$i]['name'] === 'comp[]'){
                 $html .= '<div id="qualifications">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
-                $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
-                $html .= $formcv->error($array[$i]['name']);
-                $html .= '<div id="ajout_comp">';
-                $html .= $formcv->label('comp_aj','image2');
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name']);
+                $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= $formcv->error2($array[$i]['name']);
                 $html .= '</div>';
+                $html .= '<div id="ajout_comp">';
+                $html .= $formcv->label2('comp_aj','image2');
                 $html .= '</div>';
             } elseif ($array[$i]['name'] === 'lang[]'){
+                $html .= '<div id="language">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
-                $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
-                $html .= $formcv->error($array[$i]['name']);
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name']);
+                $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= $formcv->error2($array[$i]['name']);
+                $html .= '</div>';
                 $html .= '<div id="ajout_lang">';
-                $html .= $formcv->label('lang_aj','image2');
+                $html .= $formcv->label2('lang_aj','image2');
                 $html .= '</div>';
             } elseif ($array[$i]['name'] === 'hob[]'){
+                $html .= '<div id="hobb">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
-                $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
-                $html .= $formcv->error($array[$i]['name']);
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name']);
+                $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= $formcv->error2($array[$i]['name']);
+                $html .= '</div>';
                 $html .= '<div id="ajout_hob">';
-                $html .= $formcv->label('hob_aj','image2');
+                $html .= $formcv->label2('hob_aj','image2');
                 $html .= '</div>';
             }else{
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['name'],$array[$i]['type']);
-                $html .= $formcv->label($array[$i]['name'],$array[$i]['img']);
-                $html .= $formcv->error($array[$i]['name']);
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name']);
+                $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= $formcv->error2($array[$i]['name']);
             }
         }
         $html .= $formcv->submit();

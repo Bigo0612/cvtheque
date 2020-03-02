@@ -88,6 +88,11 @@ class Form
         }
         return null;
     }
+    public function error2($name)
+    {
+        $error = !empty($this->errors[$name]) ? $this->errors[$name] : '';
+        return '<span class="error">'.$error.'</span>';
+    }
 
     /**
      * @param $name
@@ -97,6 +102,11 @@ class Form
     public function label($name,$label,$class=NULL )
     {
         return '<label for="'.$name.'" class="'.$class.'">'.ucfirst($label).'</label>';
+    }
+
+    public function label2(string $name, $img)
+    {
+        return '<label id="' .$img. '" for="'.$name.'"><img src="assets/img/plus.png"/></label>';
     }
 
     /**
