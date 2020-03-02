@@ -33,8 +33,6 @@ elseif ($page == 'databasecv') {
     $controller = new \App\Controller\defaultController();
     $controller->databasecv();
 }
-
-
 elseif ($page == 'admin') {
     $controller = new \App\Controller\AdminController();
     $controller->index();

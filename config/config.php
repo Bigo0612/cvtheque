@@ -6,5 +6,5 @@ return array(
     'db_pass'   => 'root',
     'db_host'   => 'localhost',
 
-    'directory' => '/web/cvtek/view/'
+    'directory' => '/cvtek/view/'
 );

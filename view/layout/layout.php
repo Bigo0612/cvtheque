@@ -69,8 +69,9 @@
             </ul>
         </div>
     </nav>
-    <div class="clear"></div>
 </header>
+
+
 
 <div class="container">
     <?= $content; ?>
