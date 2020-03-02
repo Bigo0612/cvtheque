@@ -3,7 +3,6 @@
 
 namespace App\Model;
 
-use App\Service\Database;
 use App\Service\Model;
 use App\App;
 
