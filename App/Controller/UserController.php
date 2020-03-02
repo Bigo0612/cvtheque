@@ -9,16 +9,6 @@ use App\Repository\Validation;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-
-    }
-
-    public function listing()
-    {
-
-    }
-
     public function register()
     {
         $title = 'Inscription';
@@ -56,13 +46,14 @@ class UserController extends Controller
         $form = new Form($errors, 'post');
         if (isset($_POST['submitted'])) {
             $post = $this->cleanXss($_POST);
-            $this->debug($post);
             $v = new Validation();
-            $errors['email'] = $v->emailValid($post['mail']);
+            $errors['mail'] = $v->emailValid($post['mail']);
+
+            $this->debug($post);
+            $this->debug($errors);
 
             if ($v->IsValid($errors) == true) {
                 $user = UserModel::userLogin($post['mail']);
-                $this->debug($user);
                 if ($user->email === $post['mail'] && password_verify($post['password'], $user->pass)) {
                     $_SESSION = array(
                         'id'    => $user->id,
@@ -75,16 +66,17 @@ class UserController extends Controller
                 } else {
                         $errors['password'] = 'Mot de passe ou mail incorrect';
                 }
+            } else {
+                $errors['login'] = 'Erreur dans les identifiants';
             }
         } else {
             $errors['email'] = 'Erreur dans le fomulaire';
         }
 
-        $this->debug($_SESSION);
-
         $this->render('app.default.login', array(
             'title' => $title,
-            'form'  => $form
+            'form'  => $form,
+            'errors' => $errors
         ));
     }
 }

@@ -37,7 +37,7 @@ class Validation
     {
         $error = '';
         if(empty($email) || (filter_var($email, FILTER_VALIDATE_EMAIL)) === false) {
-            $error = 'Adresse email invalide.';
+            $error = 'Erreur dans le mail et/ou mdp';
         }
         return $error;
     }
@@ -70,6 +70,22 @@ class Validation
         }
         return $error;
 
+    }
+
+    public function validChamp($errors,$value,$key,$min,$max,$empty = false)
+    {
+        if(!empty($value)) {
+            if(mb_strlen($value) < $min) {
+                $errors[$key] = 'Minimum ' .$min . ' caractères';
+            } elseif (mb_strlen($value) > $max) {
+                $errors[$key] = 'Maximum ' .$max . ' caractères';
+            }
+        } else {
+            if(!$empty){
+                $errors[$key] = 'Veuillez renseigner ce champ';
+            }
+        }
+        return $errors;
     }
 
 

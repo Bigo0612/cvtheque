@@ -6,6 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
     <title>Framework POO</title>
     <link rel="stylesheet" type="text/css" href="../public/assets/css/styles.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>cvtheque</title>
 </head>
 <body>
@@ -13,7 +17,7 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <a class="logo" href="<?= $view->path('home'); ?>"><img src="asset/img/logo.png" alt=""></a>
+            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/logo.png" alt=""></a>
             <form class="form">
                 <div class="search">
                     <input type="text" class="searchJob" placeholder="Search jobs">
@@ -27,13 +31,13 @@
 
             <ul class="navbar2">
                 <li class="contact">
-                    <a class="job-contact" href="contact.php">
+                    <a class="job-contact" href="<?= $view->path('contact'); ?>">
                         <i class="fas fa-pencil-alt"></i>
                         <span class="contact-me">Contact</span></a>
                 </li>
 
                 <li class="nav-job">
-                    <a class="job-link" href="jobs.php">
+                    <a class="job-link" href="<?= $view->path('jobs'); ?>">
                         <i class="fas fa-briefcase"></i>
                         <span class="jobs">Jobs</span></a>
 
@@ -50,16 +54,18 @@
 
                 <li class="inscription">
                     <a  href="inscription.php">
-                        <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
+                        <a class="inscription-link" href="<?= $view->path('register'); ?>"></a>
                         <i class="fas fa-user-friends"></i>
                         <span class="inscript">Inscription</span></a>
                 </li>
 
                 <li class="connexion">
-                    <a  href="connexion.php">
                         <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
-                        <span class="connex">Connexion</span></a>
                 </li>
+                <li>
+                    <a href="<?= $view->path('admin') ?>">Admin</a>
+                </li>
+                <li><a href="<?= $view->path('cv'); ?>">CV</a></li>
             </ul>
         </div>
     </nav>
@@ -71,9 +77,16 @@
 </div>
 
 <footer>
-
+    <div class="foot">
+        <p>&copy; 2020 - cvtheque &reg;</p>
+        <a href="index.php">Accueil</a>
+        <a href="contact.php">Contact</a>
+        <a href="<?= $view->path('cgu'); ?>">CGU</a>
+        <a href="<?= $view->path('mentionsLegales'); ?>">Mentions légales</a>
+    </div>
 </footer>
 
 <script src="../public/assets/js/main.js"></script>
+<script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
 </body>
 </html>
