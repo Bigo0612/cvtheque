@@ -54,7 +54,7 @@
 
                 <li class="inscription">
                     <a  href="inscription.php">
-                        <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
+                        <a class="inscription-link" href="<?= $view->path('register'); ?>"></a>
                         <i class="fas fa-user-friends"></i>
                         <span class="inscript">Inscription</span></a>
                 </li>
@@ -88,7 +88,5 @@
 
 <script src="../public/assets/js/main.js"></script>
 <script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>
