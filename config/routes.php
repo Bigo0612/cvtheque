@@ -17,6 +17,10 @@ elseif ($page == 'login') {
     $controller = new \App\Controller\UserController();
     $controller->login();
 }
+elseif ($page == 'cv') {
+    $controller = new \App\Controller\CvController();
+    $controller->cv();
+}
 elseif ($page == 'mentionsLegales') {
     $controller = new \App\Controller\defaultController();
     $controller->mentionsLegales();

@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
+    <title>Framework POO</title>
     <link rel="stylesheet" type="text/css" href="../public/assets/css/styles.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>cvtheque</title>
 </head>
 <body>
@@ -26,13 +31,13 @@
 
             <ul class="navbar2">
                 <li class="contact">
-                    <a class="job-contact" href="contact.php">
+                    <a class="job-contact" href="<?= $view->path('contact'); ?>">
                         <i class="fas fa-pencil-alt"></i>
                         <span class="contact-me">Contact</span></a>
                 </li>
 
                 <li class="nav-job">
-                    <a class="job-link" href="jobs.php">
+                    <a class="job-link" href="<?= $view->path('jobs'); ?>">
                         <i class="fas fa-briefcase"></i>
                         <span class="jobs">Jobs</span></a>
 
@@ -48,8 +53,10 @@
                 </li>
 
                 <li class="inscription">
-                        <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
+                    <a  href="inscription.php">
+                        <a class="inscription-link" href="<?= $view->path('register'); ?>"></a>
                         <i class="fas fa-user-friends"></i>
+                        <span class="inscript">Inscription</span></a>
                 </li>
 
                 <li class="connexion">
@@ -58,6 +65,7 @@
                 <li>
                     <a href="<?= $view->path('admin') ?>">Admin</a>
                 </li>
+                <li><a href="<?= $view->path('cv'); ?>">CV</a></li>
             </ul>
         </div>
     </nav>
