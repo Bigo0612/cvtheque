@@ -27,7 +27,7 @@ class ContactController extends Controller
 
             if ($v->IsValid($errors) == true) {
                 ContactModel::insertContact($post['mail'], $post['name'], $post['firstname'], $post['message']);
-                //$sql = "INSERT INTO answer VALUES ('". $question."')WHERE question";
+
                 //App::getDatabase()->prepareInsert($sql,[$question]);
 
             }
