@@ -56,6 +56,13 @@ class Database {
         return $query->fetchAll(PDO::FETCH_CLASS,$className);
     }
 
+    public function queryRaw($sql)
+    {
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function aggregation($sql)
     {
         $query = $this->getPdo()->prepare($sql);
@@ -81,6 +88,8 @@ class Database {
     {
         $query = $this->getPdo()->prepare($sql);
         $query->execute($bind);
+
+        return $this->getPdo()->lastInsertId();
     }
 
 

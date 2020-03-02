@@ -26,6 +26,9 @@ elseif ($page == 'cv') {
 }elseif ($page == 'answer'){
     $controller=new App\Controller\AnswerController();
     $controller->answer();
+}elseif ($page == 'ticket'){
+    $controller=new \App\Controller\TicketController();
+    $controller->ticket();
 }
 else {
     $controller = new App\Controller\DefaultController();

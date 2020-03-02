@@ -19,9 +19,11 @@ class ContactModel extends Model
 
     public static function insertContact(string $mail,string $name,string $firstname,string $message){
         $sql = "INSERT INTO " . self::getTable() . "  VALUES(NULL,?,?,?,?,NOW(),NULL)";
-        App::getDatabase()->prepareInsert($sql,[$mail,$name,$firstname,$message]);
+        $contactId = App::getDatabase()->prepareInsert($sql,[$mail,$name,$firstname,$message]);
         $sql = "INSERT INTO answer (answer,created_at,modified_at,question) VALUES (NULL,NOW(),NULL,:message)";
-        App::getDatabase()->prepareInsert($sql,[':message'=>$message]);
+        $answerId = App::getDatabase()->prepareInsert($sql,[':message'=>$message]);
+        $sql = "INSERT INTO ticket (id_contact, created_at_contact, id_answer, created_at_answer) VALUES (?, NOW(), ?, NOW())";
+        App::getDatabase()->prepareInsert($sql, [$contactId, $answerId]);
     }
 
     /**
