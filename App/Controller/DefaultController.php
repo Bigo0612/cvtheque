@@ -13,6 +13,7 @@ class DefaultController extends Controller
     public function index()
     {
         $message = 'CVTEK';
+        
 
         $this->render('app.default.frontpage',array(
             'message' => $message,
@@ -26,6 +27,10 @@ class DefaultController extends Controller
     public function cgu()
     {
         $this->render('app.default.cgu',array());
+    }
+    public function logout()
+    {
+        $this->render('app.default.logout',array());
     }
 
     /**

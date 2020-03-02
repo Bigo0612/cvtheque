@@ -38,6 +38,11 @@ class UserController extends Controller
         ));
     }
 
+    public function account()
+    {
+        $this->render('app.users.account', array(
+        ));
+    }
     public function login()
     {
         $title = 'Connexion';
@@ -49,12 +54,9 @@ class UserController extends Controller
             $v = new Validation();
             $errors['mail'] = $v->emailValid($post['mail']);
 
-            $this->debug($post);
-            $this->debug($errors);
-
             if ($v->IsValid($errors) == true) {
                 $user = UserModel::userLogin($post['mail']);
-                if ($user->email === $post['mail'] && password_verify($post['password'], $user->pass)) {
+                if ($user && $user->email === $post['mail'] && password_verify($post['password'], $user->pass)) {
                     $_SESSION = array(
                         'id'    => $user->id,
                         'nom'   => $user->name,

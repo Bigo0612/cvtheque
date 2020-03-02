@@ -9,7 +9,7 @@ use App\App;
 class UserModel extends Model
 {
     protected static $table = 'users';
-    private int $id;
+    private $id;
     private $name;
     private $firstname;
     private $mail;
