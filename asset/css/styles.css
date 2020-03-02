@@ -5,6 +5,7 @@ body {
     font-size: 0.8em;
     color: #ffffff;
     font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 70px;
 }
 
 /*/////////////////////////// Header ////////////////////////////// */
@@ -291,7 +292,22 @@ input[type="checkbox" i] {
     margin: 40px 0px 40px 0px;
 }
 
+/* ///////////////////// Page CV ////////////////// */
 
+#chose {
+    width:300px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #2C2C2C;
+    color: white;
+    border-style: none;
+}
 
+.custom_select {
+   margin-left: 12%;
+}
 
-
+.valid {
+margin-left: 48%;
+    margin-top: 10px;
+}

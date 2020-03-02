@@ -21,28 +21,48 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
 //die($return);
 ?>
 
-<section class="research">
+<section class="advanced">
     <div class="wrap">
-        <div class="frame">
+        <div class="option">
             <div class="research_executive">
-                <a class="logo2" href="index.html"><img src="asset/img/logo.png" alt=""></a>
+                <a class="logo2" href="index.html"><img src="asset/img/cv.png" alt=""></a>
                 <hr>
                 <div class="research_question">
-                    <p>Que recherchez vous?</p>
+                    <p>Liste de CV</p>
                 </div>
-                <form class="form">
-                    <div class="main_search">
-                        <input type="text" class="searchJob2" placeholder="Search jobs">
-                        <div class="btn3">
-                            <button class="btn4" type="button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <div class="custom_select">
+                    <select name="level" id="chose">
+                        <option value="0">Votre niveau</option>
+                        <option value="1">Non diplomé</option>
+                        <option value="2">Niveau 5 (CAP/BEP)</option>
+                        <option value="3">Niveau 4 (BAC)</option>
+                        <option value="4">Niveau 3 (DEUG/BTS/DUT/DEUST)(BAC +2)</option>
+                        <option value="5">Niveau 2 (Licence)(BAC +3)</option>
+                        <option value="6">Niveau 2 (Master 1)(BAC +4)</option>
+                        <option value="7">Niveau 1 (Master 2)(BAC +5)</option>
+                        <option value="8">Niveau 1 (Doctorat)(BAC +8)</option>
+                    </select>
+                    <select name="experience" id="chose">
+                        <option value="0">Moins d'un ans</option>
+                        <option value="1">1 ans</option>
+                        <option value="2">2 ans</option>
+                        <option value="3">3 ans</option>
+                        <option value="4">4 ans</option>
+                        <option value="5">5 ans</option>
+                        <option value="6">5 à 10 ans</option>
+                        <option value="7">10 ans et plus</option>
+                    </select>
+                    <select name="durée" id="chose">
+                        <option value="0">CDD</option>
+                        <option value="1">CDI</option>
+                        <option value="2">Formation</option>
+                    </select>
+                </div>
+                <div class="valid">
+                    <input type="submit">
+                </div>
+
             </div>
-        </div>
-    </div>
     <div class="clear"></div>
 </section>
 
