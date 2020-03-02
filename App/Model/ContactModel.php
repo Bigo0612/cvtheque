@@ -13,15 +13,14 @@ class ContactModel extends Model
     private $mail;
     private $name;
     private $firstname;
+    private $message;
     private $created_at;
     private $modified_at;
 
-    public static function insertContact(string $mail,string $name,string $firstname):void{
-        $sql = "INSERT INTO " . self::getTable() . "  VALUES(?,?,?,NOW(),NULL)";
-        App::getDatabase()->prepareInsert($sql,[$mail,$name,$firstname]);
+    public static function insertContact(string $mail,string $name,string $firstname,string $message){
+        $sql = "INSERT INTO " . self::getTable() . "  VALUES(NULL,?,?,?,?,NOW(),NULL)";
+        App::getDatabase()->prepareInsert($sql,[$mail,$name,$firstname,$message]);
     }
-
-
 
     /**
      * @return int
@@ -90,6 +89,22 @@ class ContactModel extends Model
     /**
      * @return mixed
      */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param mixed $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getCreatedAt()
     {
         return $this->created_at;
@@ -118,5 +133,7 @@ class ContactModel extends Model
     {
         $this->modified_at = $modified_at;
     }
+
+
 
 }

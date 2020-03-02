@@ -24,13 +24,15 @@ class ContactController extends Controller
             $errors['firstname'] = $v->textValid($post['firstname'], 'firstname', 2, 150);
             $errors['message'] = $v->textValid($post['message'], 'message', 2, 500);
             $question = $v->textValid($post['message'], 'message', 2, 500);
-        }
-        if ($v->IsValid($errors) == true) {
-            ContactModel::insertContact($post['mail'], $post['name'], $post['firstname'], $post['message']);
-            $sql = "INSERT INTO answer VALUES ('". $question."')WHERE question";
-            App::getDatabase()->prepareInsert($sql,[$question]);
 
+            if ($v->IsValid($errors) == true) {
+                ContactModel::insertContact($post['mail'], $post['name'], $post['firstname'], $post['message']);
+                //$sql = "INSERT INTO answer VALUES ('". $question."')WHERE question";
+                //App::getDatabase()->prepareInsert($sql,[$question]);
+
+            }
         }
+
         $this->render('app.default.contact',array(
             'title'=>$title,
             'form' => $form,
