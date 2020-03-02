@@ -14,12 +14,15 @@ elseif ($page == 'register') {
     $controller->register();
 }
 elseif ($page == 'login') {
-    $controller = new \App\Controller\UserController();
+    $controller = new App\Controller\UserController();
     $controller->login();
 }
 elseif ($page == 'cv') {
-    $controller = new \App\Controller\CvController();
+    $controller = new App\Controller\CvController();
     $controller->cv();
+}elseif ($page == 'contact'){
+    $controller =new App\Controller\ContactController();
+    $controller->contact();
 }
 else {
     $controller = new App\Controller\DefaultController();
