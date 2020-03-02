@@ -25,7 +25,7 @@ class AnswerController extends Controller
 
             if ($v->IsValid($errors)== true){
                 AnswerModel::updateAnswer($post['answer_id'],$post['answer']);
-
+                $this->redirect('index.php?page=answer');
             }
         }
 
