@@ -31,6 +31,10 @@ elseif ($page == 'databasecv') {
 }
 
 
+elseif ($page == 'admin') {
+    $controller = new \App\Controller\AdminController();
+    $controller->index();
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();

@@ -55,6 +55,9 @@
                 <li class="connexion">
                         <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
                 </li>
+                <li>
+                    <a href="<?= $view->path('admin') ?>">Admin</a>
+                </li>
             </ul>
         </div>
     </nav>

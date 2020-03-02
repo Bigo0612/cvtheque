@@ -23,10 +23,10 @@ if (!empty($errors['mail'])) {
 
 echo $form->label('password1', 'Mot de passe','lab');
 echo $form->divStart('inscrip');
-echo $form->input('password','password1','searchjobs2');
+echo $form->input('password','password','searchjobs2');
 echo $form->divEnd();
-if (!empty($errors['password1'])) {
-    echo '<span class="error">'.$errors['password1'].'</span>';
+if (!empty($errors['password'])) {
+    echo '<span class="error">'.$errors['password'].'</span>';
 }
 
 echo $form->divStart('sub');
