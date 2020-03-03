@@ -1,6 +1,5 @@
 <?php
 use App\Service\Controller;
-$v = new Controller();
 ?>
 
 <h1>
@@ -18,7 +17,3 @@ $v = new Controller();
     <input type="number" name="roles" id="roles" value="<?= $user->roles ?>">
     <input type="submit" name="submitted" value="Envoyer">
 </form>
-
-<?php
-$v->debug($_POST['submitted'])
-?>

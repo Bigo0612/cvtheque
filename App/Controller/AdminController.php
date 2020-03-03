@@ -33,7 +33,6 @@ class AdminController extends Controller
         $form = new Form($errors);
         if(!empty($_POST['submitted'])) {
             $post = $this->cleanXss($_POST);
-            $this->debug($post);
             $v = new Validation();
             if($v->isValid($errors)) {
                 AdminModel::editUser($id, $post);

@@ -15,11 +15,6 @@ $c = new \App\Service\Controller();
 
 <h2>Gérer les users</h2>
 
-<?php
-$c->debug($users);
-
-?>
-
 <table class="table table-stripped">
     <thead>
     <tr>
