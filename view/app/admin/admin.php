@@ -6,8 +6,8 @@ $am = new AdminModel();
 $v = new View();
 $c = new \App\Service\Controller();
 ?>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <h1>
     <?= $title ?>
@@ -37,7 +37,7 @@ $c->debug($users);
                 <form method="post" action="" style="display: inline-block"
                       onsubmit="return confirm('Etes vous vraiment sûr ?')">
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ property.id) }}">
+                    <input type="hidden" name="_token" value="">
                     <button class="btn btn-danger">Supprimer</button>
                 </form>
             </td>

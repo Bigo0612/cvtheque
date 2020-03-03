@@ -25,33 +25,22 @@ class AdminController extends Controller
         ));
     }
 
-    public function listingUser()
-    {
-        $title = 'Listing des User';
-
-        $count      = AdminModel::count();
-
-        $this->render('app.admin.listing', array(
-            'title' => $title,
-            'users' => $users
-        ));
-    }
-
     public function editUserById($id)
     {
         $title = "Editer l'utilisateur";
-
         $user = AdminModel::findById($_GET['id']);
         $errors = array();
+        $form = new Form($errors);
         if(!empty($_POST['submitted'])) {
             $post = $this->cleanXss($_POST);
+            $this->debug($post);
             $v = new Validation();
             if($v->isValid($errors)) {
                 AdminModel::editUser($id, $post);
             }
         }
-        $form = new Form($errors);
-        $this->render('app.admin.edit' ,compact('user','form'));
+
+        $this->render('app.admin.edit', compact('user','form','title'));
     }
 
 }

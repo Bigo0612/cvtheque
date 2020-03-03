@@ -37,10 +37,6 @@ elseif ($page == 'admin') {
     $controller = new \App\Controller\AdminController();
     $controller->index();
 }
-elseif ($page == 'listing') {
-    $controller = new \App\Controller\AdminController();
-    $controller->listingUser();
-}
 elseif ($page == 'edit') {
     $controller = new \App\Controller\AdminController();
     $controller->editUserById($_GET['id']);
