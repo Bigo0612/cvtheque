@@ -11,10 +11,9 @@ class AdminModel extends Model
 {
     protected static $table = 'users';
 
-    public function findAllUsers()
+    public static function findAllUsers()
     {
-        $sql = "SELECT * FROM " . self::getTable() . " WHERE roles=?";
-        return App::getDatabase()->prepare($sql, 1, get_called_class(), true);
+        return App::getDatabase()->query("SELECT * FROM " . self::getTable() . " ", get_called_class());
     }
 
     public function findUserById(int $id)
@@ -25,27 +24,34 @@ class AdminModel extends Model
 
     public function findUserByMail(string $mail)
     {
-        $sql = "SELECT * FROM " . self::getTable() . " WHERE mail=?";
+        $sql = "SELECT * FROM " . self::getTable() . " WHERE email=?";
         return App::getDatabase()->prepare($sql, [$mail], get_called_class(), true);
     }
 
-    public function addUser(string $name, string $firstname, string $mail, string $password): void
+    public function addUser(string $name, string $firstname, string $mail, string $password)
     {
         $token = UserModel::generateToken(255);
         $sql = "INSERT INTO " . self::getTable() . " VALUES(NULL,?,?,?,?,NOW(),NULL,'user',?)";
         App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $token]);
     }
 
-    public function editUser(string $name, string $firstname, string $mail, string $password, $roles): void
+    public static function editUser($id, $post)
     {
         $token = UserModel::generateToken(255);
         $sql = "UPDATE " . self::getTable() . "SET name=?, firstname=?, mail=?, pass=?, NULL, NOW(), roles=?, token=?";
-        App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $roles, $token]);
+        App::getDatabase()->prepareInsert($sql, [$post['name'], $post['firstname'], $post['mail'], $post['password'],
+            $post['roles'], $token, $id]);
     }
 
-    public function deleteUser(int $id): void
+    public function deleteUser(int $id)
     {
         $sql = "DELETE FROM " . self::getTable() . " WHERE id=?";
         App::getDatabase()->prepare($sql, [$id], get_called_class(), true);
+    }
+
+    public static function count()
+    {
+        $sql = "SELECT COUNT(id) FROM " . self::getTable();
+        return App::getDatabase()->aggregation($sql);
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
 return array(
-    'db_name'   => 'cv',
+    'db_name'   => 'cvtek',
     'db_user'   => 'root',
-    'db_pass'   => 'root',
+    'db_pass'   => '',
     'db_host'   => 'localhost',
 
     'directory' => '/cvtek/view/'

@@ -22,7 +22,7 @@ class UserModel extends Model
     public static function insertUser(string $name, string $firstname, string $mail, string $password): void
     {
         $token = UserModel::generateToken(255);
-        $sql = "INSERT INTO " . self::getTable() . " VALUES(NULL,?,?,?,?,NOW(),NULL,'user',?)";
+        $sql = "INSERT INTO " . self::getTable() . " VALUES(NULL,?,?,?,?,NOW(),NULL,1,?)";
         App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $token]);
     }
 
