@@ -1,0 +1,298 @@
+@import "reset.css";
+/*@import 'cvform.css';*/
+body {
+    background: #0F0F0F;
+    font-size: 0.8em;
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 70px;
+}
+
+/*/////////////////////////// Header ////////////////////////////// */
+
+
+
+.navbar {
+    background-color: #2C2C2C;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    max-width: 100%;
+    width: 6%;
+}
+
+.logo img {
+    max-width: 100%;
+    margin-top: 5px;
+}
+
+.search input {
+    float: left;
+    margin-top: 20px;
+    padding: 5px 20px 5px 5px;
+    background: #0F0F0F;
+    border: none;
+    border-radius: 3px 0px 0px 3px;
+    color: #fff;
+}
+
+.searchJob::placeholder {
+    color: white;
+}
+
+.btn {
+    float: left;
+    margin-top: 20px;
+    background: #0F0F0F;
+    padding: 2.5px;
+    border-radius: 0px 5px 5px 0px
+}
+
+.btn2 i {
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.btn2 {
+    padding: 2.5px;
+    background: #0F0F0F;
+    border: none;
+}
+
+.navbar2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact {
+    padding: 25px;
+}
+
+.contact a {
+    color: #fff;
+}
+
+.nav-job {
+    padding: 22px 0px 22px 22px;
+}
+
+.nav-job a {
+    color: #fff;
+}
+
+.divers-jobs {
+    width: 18%;
+    height: 80%;
+}
+
+.inscription {
+    padding: 25px;
+}
+
+.inscription a {
+    color: #fff;
+}
+
+.connexion {
+    padding: 25px;
+}
+
+.connexion a {
+    color: #fff;
+}
+
+/*/////////////////////////// frontpage ////////////////////////////// */
+
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.frame {
+    background-color: #2C2C2C;
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.logo2 img {
+    max-width: 100%;
+    width: 30%;
+}
+
+hr {
+    width: 80%;
+    border: 1px solid #00BCE9;
+}
+
+.research_question {
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    padding: 20px;
+}
+
+.main_search {
+    display: flex;
+    justify-content: center;
+    padding: 20PX;
+}
+
+.main_search input {
+    padding: 20px;
+    max-width: 100%;
+    width: 80%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 0px 0px 5px;
+    color: #fff;
+}
+
+.searchJob2::placeholder {
+    color: white;
+}
+
+.btn4 {
+    padding: 25px;
+    background: #0F0F0F;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.btn4 i {
+    font-size: 2em;
+    color: #fff;
+}
+
+/* ///////////////////////////////// Inscription ///////////////////////////////////// */
+
+.inscrip {
+    display: flex;
+    justify-content: center;
+    padding: 20PX;
+}
+
+.inscrip input {
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+}
+
+.lab {
+    display: flex;
+    justify-content: center;
+}
+
+.cgu {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+}
+
+.cgu a {
+    color: #fff;
+}
+
+input[type="checkbox" i] {
+    margin: 10px 0px 0px 10px;
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+}
+
+
+
+/* ///////////////////////////////// Base CV ///////////////////////////////////// */
+
+.label {
+    display: flex;
+    margin-top: 110px;
+    margin-bottom: -30px;
+}
+
+.lab2 {
+    padding: 0px 170px 0px 255px;
+    font-size: 2em;
+}
+
+.inscrip2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.inscrip2 input {
+    max-width: 100%;
+    background: #0F0F0F;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+}
+
+.searchJob2 {
+    width: 40%;
+    margin: 0px 0px 0px 30px;
+}
+
+.Arround {
+    background-color: #2C2C2C;
+    padding: 20px;
+    margin: 40px 0px 40px 0px;
+}
+
+/*/////////////////////////// Footer ////////////////////////////// */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #2C2C2C;
+    padding-top: 10px;
+    margin-top: 100px;
+}
+
+.foot {
+    background: #0F0F0F;
+    padding: 10px 80px 10px 80px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+
+.foot p {
+    margin-left: 125px;
+    padding-bottom: 10px;
+}
+
+.foot a {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1em;
+}
