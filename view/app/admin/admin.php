@@ -29,12 +29,7 @@ $c = new \App\Service\Controller();
             <td><?php echo $user->firstname ?></td>
             <td>
                 <a href="index.php?page=edit&id=<?= $user->id; ?>" class="btn btn-secondary">Editer</a>
-                <form method="post" action="" style="display: inline-block"
-                      onsubmit="return confirm('Etes vous vraiment sûr ?')">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" value="">
-                    <button class="btn btn-danger">Supprimer</button>
-                </form>
+                <a href="index.php?page=delete&id=<?= $user->id; ?>" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         <?php } ?>

@@ -35,7 +35,7 @@ class AdminModel extends Model
         App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $token]);
     }
 
-    public static function editUser($id, $post)
+    public static function editUser(int $id, $post)
     {
         $token = UserModel::generateToken(255);
         $sql = "UPDATE " . self::getTable() . " SET name=?, firstname=?, email=?, modified_at=NOW(), roles=?, token=? WHERE id=?";
@@ -44,10 +44,9 @@ class AdminModel extends Model
             $post['roles'], $token, $_GET['id']]);
     }
 
-    public function deleteUser(int $id)
+    public static function delete($id,$columId = 'id')
     {
-        $sql = "DELETE FROM " . self::getTable() . " WHERE id=?";
-        App::getDatabase()->prepare($sql, [$id], get_called_class(), true);
+        App::getDatabase()->prepareInsert("DELETE FROM " . self::getTable() . " WHERE ".$columId." = ?",[$id]);
     }
 
     public static function count()

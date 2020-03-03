@@ -42,4 +42,16 @@ class AdminController extends Controller
         $this->render('app.admin.edit', compact('user','form','title'));
     }
 
+    public function deleteUserById($id)
+    {
+        AdminModel::delete($id);
+        header('Location: index.php?page=admin');
+    }
+
+    private function ifExist($id){
+        $user = AdminModel::findById($id);
+        if(empty($jardinier)) { $this->Abort404(); }
+        return $user;
+    }
+
 }

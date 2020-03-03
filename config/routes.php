@@ -41,6 +41,10 @@ elseif ($page == 'edit') {
     $controller = new \App\Controller\AdminController();
     $controller->editUserById($_GET['id']);
 }
+elseif ($page == 'delete') {
+    $controller = new \App\Controller\AdminController();
+    $controller->deleteUserById($_GET['id']);
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();
