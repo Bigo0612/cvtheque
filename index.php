@@ -66,9 +66,24 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
                 <div class="valid">
                     <input type="submit">
                 </div>
-                <hr>
             </div>
     <div class="clear"></div>
 </section>
+<?php $pdo = new PDO('mysql:host=localhost;dbname=wasted', "root", "");
+$niveau = isset($_POST['niveau']) ? $_POST['niveau'] : '';
+$experience = isset($_POST['experience']) ? $_POST['experience'] : '';
+$contrat = isset($_POST['contrat']) ? $_POST['contrat'] : '';
 
+if(!empty($niveau) || !empty($experience) || !empty($contrat)){
+    $recup = $pdo->prepare("SELECT * FROM users WHERE niveau =" . $niveau . " AND experience =" . $experience . " AND contrat =" . $contrat . " LIMIT 10");
+    $recup->execute();
+
+    $results = $recup->fetch(PDO::FETCH_ASSOC);
+
+    foreach($results as $UnCV){
+        echo 'Résultat de la recherche: '.$unCv['niveau'].', '.$unCv['experience'].', '.$unCv['contrat'].' <br />';
+    }
+}
+
+?>
 <?php include('inc/footer.php');
