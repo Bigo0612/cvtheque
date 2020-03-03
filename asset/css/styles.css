@@ -301,6 +301,7 @@ input[type="checkbox" i] {
     background-color: #2C2C2C;
     color: white;
     border-style: none;
+    margin-left: 5px;
 }
 
 .custom_select {
@@ -310,4 +311,16 @@ input[type="checkbox" i] {
 .valid {
 margin-left: 48%;
     margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#search {
+    width:300px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #2C2C2C;
+    color: white;
+    border-style: none;
+    margin-left: 38%;
+    margin-bottom: 25px;
 }

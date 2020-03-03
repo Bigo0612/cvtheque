@@ -30,9 +30,12 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
                 <div class="research_question">
                     <p>Liste de CV</p>
                 </div>
+                <form method="POST" action="">
+                    <input type="text" name="recherche" placeholder="Metier" id="search">
+                </form>
                 <div class="custom_select">
                     <select name="level" id="chose">
-                        <option value="0">Votre niveau</option>
+                        <option value="0">Votre niveau d'étude</option>
                         <option value="1">Non diplomé</option>
                         <option value="2">Niveau 5 (CAP/BEP)</option>
                         <option value="3">Niveau 4 (BAC)</option>
@@ -43,25 +46,27 @@ if (isset($_GET['controller']) && file_exists(SRC_FOLDER . '/Controllers/' . $_G
                         <option value="8">Niveau 1 (Doctorat)(BAC +8)</option>
                     </select>
                     <select name="experience" id="chose">
-                        <option value="0">Moins d'un ans</option>
-                        <option value="1">1 ans</option>
-                        <option value="2">2 ans</option>
-                        <option value="3">3 ans</option>
-                        <option value="4">4 ans</option>
-                        <option value="5">5 ans</option>
-                        <option value="6">5 à 10 ans</option>
-                        <option value="7">10 ans et plus</option>
+                        <option value="0">Année d'experience</option>
+                        <option value="1">Moins d'un ans</option>
+                        <option value="2">1 ans</option>
+                        <option value="3">2 ans</option>
+                        <option value="4">3 ans</option>
+                        <option value="5">4 ans</option>
+                        <option value="6">5 ans</option>
+                        <option value="7">5 à 10 ans</option>
+                        <option value="8">10 ans et plus</option>
                     </select>
                     <select name="durée" id="chose">
-                        <option value="0">CDD</option>
-                        <option value="1">CDI</option>
-                        <option value="2">Formation</option>
+                        <option value="0">Type de contrat</option>
+                        <option value="1">CDD</option>
+                        <option value="2">CDI</option>
+                        <option value="3">Formation</option>
                     </select>
                 </div>
                 <div class="valid">
                     <input type="submit">
                 </div>
-
+                <hr>
             </div>
     <div class="clear"></div>
 </section>
