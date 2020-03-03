@@ -21,12 +21,13 @@ body {
 
 .logo {
     float: left;
-    padding: 20px 0px 20px 20px;
+    max-width: 100%;
+    width: 6%;
 }
 
 .logo img {
     max-width: 100%;
-    width: 60%;
+    margin-top: 5px;
 }
 
 .search input {
@@ -115,7 +116,7 @@ body {
 
 .frame {
     background-color: #2C2C2C;
-    margin-top: 160px;
+    margin-top: 80px;
     padding-bottom: 80px;
 }
 
@@ -123,12 +124,12 @@ body {
 .logo2 {
     display: flex;
     justify-content: center;
-    padding: 30px;
+
 }
 
 .logo2 img {
     max-width: 100%;
-    width: 10%;
+    width: 30%;
 }
 
 hr {

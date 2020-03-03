@@ -12,7 +12,7 @@ class DefaultController extends Controller
 
     public function index()
     {
-        $message = 'CVTEK';
+        $message = '';
         
 
         $this->render('app.default.frontpage',array(

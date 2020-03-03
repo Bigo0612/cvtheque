@@ -18,7 +18,7 @@
 
     <nav class="navbar">
         <div class="container">
-            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/logo.png" alt=""></a>
+            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/cv.png" alt=""></a>
             <form class="form">
                 <div class="search">
                     <input type="text" class="searchJob" placeholder="Search jobs">

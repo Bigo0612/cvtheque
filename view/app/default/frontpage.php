@@ -6,7 +6,7 @@
     <div class="wrap">
         <div class="frame">
             <div class="research_executive">
-                <a class="logo2" href="index.php"><img src="../public/assets/img/logo.png" alt=""></a>
+                <a class="logo2" href="index.php"><img src="../public/assets/img/cv.png" alt=""></a>
                 <hr>
                 <div class="research_question">
                     <p>Que recherchez vous?</p>
