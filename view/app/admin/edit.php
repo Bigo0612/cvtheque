@@ -13,4 +13,6 @@
     <input type="password" id="password1">
     <label for="password2">Confirmer le mdp</label>
     <input type="password" id="password2">
+    <label for="roles">Entrer le role</label>
+    <input type="number" id="roles" value="<?= $user->roles ?>">
 </form>

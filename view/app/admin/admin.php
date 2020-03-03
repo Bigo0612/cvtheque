@@ -6,6 +6,8 @@ $am = new AdminModel();
 $v = new View();
 $c = new \App\Service\Controller();
 ?>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 
 <h1>
     <?= $title ?>
@@ -15,9 +17,31 @@ $c = new \App\Service\Controller();
 
 <?php
 $c->debug($users);
-foreach ($users as $user) { ?>
-  <p><?php echo $user->name; ?> ( <?php echo $user->firstname ?>)</a></p>
-  <a href="index.php?page=edit&id=<?= $user->id; ?>">Edit</a>
-<?php }
+
 ?>
 
+<table class="table table-stripped">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+    </tr>
+    </thead>
+    <tbody>
+       <?php foreach ($users as $user) { ?>
+        <tr>
+            <td><?php echo $user->name; ?></td>
+            <td><?php echo $user->firstname ?></td>
+            <td>
+                <a href="index.php?page=edit&id=<?= $user->id; ?>" class="btn btn-secondary">Editer</a>
+                <form method="post" action="" style="display: inline-block"
+                      onsubmit="return confirm('Etes vous vraiment sûr ?')">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ property.id) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>
