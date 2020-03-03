@@ -50,8 +50,15 @@ class AdminController extends Controller
 
     private function ifExist($id){
         $user = AdminModel::findById($id);
-        if(empty($jardinier)) { $this->Abort404(); }
+        if(empty($user)) { $this->Abort404(); }
         return $user;
+    }
+
+    public function single($id)
+    {
+        $user = $this->ifExist($id);
+        $title = $user->name;
+        $this->render('app.admin.single', compact('user', 'title'));
     }
 
 }

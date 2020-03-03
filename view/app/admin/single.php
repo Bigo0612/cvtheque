@@ -13,26 +13,27 @@ $c = new \App\Service\Controller();
     <?= $title ?>
 </h1>
 
-<h2>Gérer les users</h2>
-
 <table class="table table-stripped">
     <thead>
     <tr>
         <th>Nom</th>
         <th>Prenom</th>
+        <th>Email</th>
+        <th>Créé le</th>
+        <th>Modifié le</th>
+        <th>Role</th>
+        <th>Token</th>
     </tr>
     </thead>
     <tbody>
-       <?php foreach ($users as $user) { ?>
         <tr>
             <td><?php echo $user->name; ?></td>
             <td><?php echo $user->firstname ?></td>
-            <td>
-                <a href="index.php?page=single&id=<?= $user->id; ?>" class="btn btn-primary">Voir</a>
-                <a href="index.php?page=edit&id=<?= $user->id; ?>" class="btn btn-secondary">Editer</a>
-                <a href="index.php?page=delete&id=<?= $user->id; ?>" class="btn btn-danger">Delete</a>
-            </td>
+            <td><?php echo $user->email ?></td>
+            <td><?php echo $user->created_at ?></td>
+            <td><?php echo $user->modified_at ?></td>
+            <td><?php echo $user->roles ?></td>
+            <td><?php echo $user->token ?></td>
         </tr>
-        <?php } ?>
     </tbody>
 </table>

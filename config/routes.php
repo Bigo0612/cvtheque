@@ -45,6 +45,10 @@ elseif ($page == 'delete') {
     $controller = new \App\Controller\AdminController();
     $controller->deleteUserById($_GET['id']);
 }
+elseif ($page == 'single') {
+    $controller = new \App\Controller\AdminController();
+    $controller->single($_GET['id']);
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();
