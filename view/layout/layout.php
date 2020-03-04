@@ -6,10 +6,17 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&display=swap" rel="stylesheet">
     <title>Framework POO</title>
     <link rel="stylesheet" type="text/css" href="../public/assets/css/styles.css">
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link ​rel='stylesheet' href='../public/assets/js/spectrum.css' />
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="../public/assets/js/spectrum.min.css"/>
+
     <title>cvtheque</title>
 </head>
 <body>
@@ -88,5 +95,8 @@
 
 <script src="../public/assets/js/main.js"></script>
 <script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
+<script src="../public/assets/js/jscolor.js"></script>
+<script src='../public/assets/js/spectrum.js'></script>
+
 </body>
 </html>
