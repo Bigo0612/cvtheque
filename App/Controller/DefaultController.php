@@ -65,16 +65,21 @@ class DefaultController extends Controller
     {
         $title = 'Changer votre mdp';
         $v = new Validation();
-        $id = UserModel::checkId($_GET['token']);
-        $this->debug($id->id);
-        if (!empty($id->id) && !empty($_POST['submitted'])) {
-            $post = $this->cleanXss($_POST);
-            $password = $v->textValid($post['password1'], 'MDP', 5, 20);
-            $hash = password_hash($password, PASSWORD_BCRYPT);
-            $token = UserModel::generateToken(255);
-            UserModel::changePwd($hash, $token, $id->id);
+        $um = new UserModel();
+        $i = $um->checkId($_GET['token']);
+        $um->setId($i->id);
+        $id = $um->getId();
+        var_dump($id);
+        if (!empty($id)) {
+            if (!empty($_POST['submitted'])) {
+                $post = $this->cleanXss($_POST);
+                $password = $v->textValid($post['password1'], 'MDP', 5, 20);
+                $hash = password_hash($password, PASSWORD_BCRYPT);
+                $token = UserModel::generateToken(255);
+                UserModel::changePwd($hash, $token, $id);
+            }
         } else {
-            $this->debug($id->id); echo 'Cest pété';
+            echo 'Cest pété';
         }
 
         $this->render('app.default.changepwd', compact('title'));

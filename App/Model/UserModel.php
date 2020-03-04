@@ -9,7 +9,7 @@ use App\App;
 class UserModel extends Model
 {
     protected static $table = 'users';
-    private int $id;
+    private $id;
     private $name;
     private $firstname;
     private $mail;
@@ -18,6 +18,7 @@ class UserModel extends Model
     private $modified_at;
     private $roles;
     private $token;
+
 
     public static function insertUser(string $name, string $firstname, string $mail, string $password): void
     {
@@ -43,7 +44,7 @@ class UserModel extends Model
         return $randomString;
     }
 
-    public static function checkId($token)
+    public function checkId($token)
     {
         $sql = "SELECT id FROM " .self::getTable() . " WHERE token=?";
         return App::getDatabase()->prepare($sql, [$token], get_called_class(), true);
@@ -58,7 +59,7 @@ class UserModel extends Model
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
