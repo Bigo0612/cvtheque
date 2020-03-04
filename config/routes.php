@@ -33,11 +33,21 @@ elseif ($page == 'databasecv') {
     $controller = new \App\Controller\defaultController();
     $controller->databasecv();
 }
-
-
 elseif ($page == 'admin') {
     $controller = new \App\Controller\AdminController();
     $controller->index();
+}
+elseif ($page == 'edit') {
+    $controller = new \App\Controller\AdminController();
+    $controller->editUserById($_GET['id']);
+}
+elseif ($page == 'delete') {
+    $controller = new \App\Controller\AdminController();
+    $controller->deleteUserById($_GET['id']);
+}
+elseif ($page == 'single') {
+    $controller = new \App\Controller\AdminController();
+    $controller->single($_GET['id']);
 }
 else {
     $controller = new App\Controller\DefaultController();
