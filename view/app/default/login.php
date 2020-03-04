@@ -32,7 +32,7 @@ if (!empty($errors['password'])) {
 echo $form->divStart('sub');
 echo $form->submit();
 echo $form->divEnd();
-
+?> <a href="index.php?page=forgot">Mot de passe oublié ?</a> <?php
 echo $form->divEnd();
 echo $form->divEnd();
 echo $form->divEnd();

@@ -16,12 +16,14 @@ class AdminController extends Controller
         $title = 'La page admin';
         $truc = '<p>Affiche un truc stp</p>';
         $users = AdminModel::findAllUsers();
+        $tickets = AdminModel::findAllTickets();
 
         $this->render(
             'app.admin.admin', array(
                 'title' => $title,
                 'truc'   => $truc,
-                'users' => $users
+                'users' => $users,
+                'tickets' => $tickets
         ));
     }
 

@@ -49,6 +49,14 @@ elseif ($page == 'single') {
     $controller = new \App\Controller\AdminController();
     $controller->single($_GET['id']);
 }
+elseif ($page == 'forgot') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->forgot();
+}
+elseif ($page = 'changepwd') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->changePwd();
+}
 else {
     $controller = new App\Controller\DefaultController();
     $controller->Page404();

@@ -43,6 +43,18 @@ class UserModel extends Model
         return $randomString;
     }
 
+    public static function checkId($token)
+    {
+        $sql = "SELECT id FROM " .self::getTable() . " WHERE token=?";
+        return App::getDatabase()->prepare($sql, [$token], get_called_class(), true);
+    }
+
+    public static function changePwd($password, $token, $id)
+    {
+        $sql = "UPDATE " . self::getTable() . " SET pass=? token=? WHERE id=?";
+        App::getDatabase()->prepareInsert($sql, [$password, $token, $id]);
+    }
+
     /**
      * @return int
      */

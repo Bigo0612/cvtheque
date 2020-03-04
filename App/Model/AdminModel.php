@@ -16,6 +16,11 @@ class AdminModel extends Model
         return App::getDatabase()->query("SELECT * FROM " . self::getTable() . " ", get_called_class());
     }
 
+    public static function findAllTickets()
+    {
+        return App::getDatabase()->query("SELECT * FROM ticket", get_called_class());
+    }
+
     public function findUserById(int $id)
     {
         $sql = "SELECT * FROM " . self::getTable() . " WHERE id=?";
