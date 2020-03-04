@@ -69,7 +69,6 @@ class DefaultController extends Controller
         $i = $um->checkId($_GET['token']);
         $um->setId($i->id);
         $id = $um->getId();
-        var_dump($id);
         if (!empty($id)) {
             if (!empty($_POST['submitted'])) {
                 $post = $this->cleanXss($_POST);
