@@ -1,5 +1,5 @@
 @import "reset.css";
-/*@import 'cvform.css';*/
+@import 'cvform.css';
 body {
     background: #0F0F0F;
     font-size: 0.8em;
@@ -16,6 +16,7 @@ body {
     display: block;
     top: 0;
     width: 100%;
+    z-index: 30;
 }
 
 .logo {

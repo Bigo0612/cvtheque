@@ -69,8 +69,6 @@
     </nav>
 </header>
 
-
-
 <div class="container">
     <?= $content; ?>
 </div>
@@ -87,5 +85,8 @@
 
 <script src="../public/assets/js/main.js"></script>
 <script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
+<script src="../public/assets/js/jscolor.js"></script>
+<script src='../public/assets/js/spectrum.js'></script>
+
 </body>
 </html>
