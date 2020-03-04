@@ -52,7 +52,7 @@ class UserModel extends Model
 
     public static function changePwd($password, $token, $id)
     {
-        $sql = "UPDATE " . self::getTable() . " SET pass=? token=? WHERE id=?";
+        $sql = "UPDATE " . self::getTable() . " SET pass=?, token=? WHERE id=?";
         App::getDatabase()->prepareInsert($sql, [$password, $token, $id]);
     }
 
