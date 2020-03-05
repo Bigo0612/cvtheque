@@ -1,5 +1,5 @@
 @import "reset.css";
-@import 'cvform.css';
+
 body {
     background: #0F0F0F;
     font-size: 0.8em;
@@ -15,6 +15,7 @@ body {
 .navbar {
     background-color: #2C2C2C;
     display: block;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 30;
