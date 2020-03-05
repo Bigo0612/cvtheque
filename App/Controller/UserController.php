@@ -38,6 +38,17 @@ class UserController extends Controller
         ));
     }
 
+    public function account()
+    {
+        $this->render('app.users.account', array(
+        ));
+    }
+
+    public function cv()
+    {
+        $this->render('app.cv.cv', array(
+        ));
+    }
     public function login()
     {
         $title = 'Connexion';
@@ -48,9 +59,6 @@ class UserController extends Controller
             $post = $this->cleanXss($_POST);
             $v = new Validation();
             $errors['mail'] = $v->emailValid($post['mail']);
-
-            $this->debug($post);
-            $this->debug($errors);
 
             if ($v->IsValid($errors) == true) {
                 $user = UserModel::userLogin($post['mail']);
@@ -63,6 +71,7 @@ class UserController extends Controller
                         'email' => $user->email,
                         'ip'    => $_SERVER['REMOTE_ADDR']
                     );
+                    header('Location: index.php?page=home');
                 } else {
                         $errors['password'] = 'Mot de passe ou mail incorrect';
                 }
@@ -78,5 +87,55 @@ class UserController extends Controller
             'form'  => $form,
             'errors' => $errors
         ));
+    }
+
+    public function index()
+    {
+        $title = 'La page Users Edit';
+        $users = UserModel::findAllUsers();
+
+        $this->render(
+            'app.users.account', array(
+            'title' => $title,
+            'users' => $users
+        ));
+    }
+
+
+    public function usersEditById($id)
+    {
+        $title = "Editer l'utilisateur";
+
+        $user = UserModel::findById($_GET['id']);
+        $errors = array();
+
+        if(!empty($_POST['submitted'])) {
+            $post = $this->cleanXss($_POST);
+            $v = new Validation();
+            if($v->isValid($errors)) {
+                UserModel::usersEdit($id, $post);
+            }
+        }
+        $form = new Form($errors);
+        $this->render('app.users.usersEdit' , compact('user','form','title'));
+    }
+
+    public function deleteUserById($id)
+    {
+        UserModel::delete($id);
+        header('Location: index.php?page=account');
+    }
+
+    private function ifExist($id){
+        $user = UserModel::findById($id);
+        if(empty($user)) { $this->Abort404(); }
+        return $user;
+    }
+
+    public function single($id)
+    {
+        $user = $this->ifExist($id);
+        $title = $user->name;
+        $this->render('app.users.singleUser', compact('user', 'title'));
     }
 }

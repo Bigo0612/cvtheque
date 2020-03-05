@@ -7,7 +7,7 @@ echo $form->divStart('research');
 echo $form->divStart('wrap');
 echo $form->divStart('frame');
 echo $form->divStart('research_executive');
-?> <a class="logo2" href="index.php"><img src="../public/assets/img/logo.png" alt=""></a><hr>
+?> <a class="logo2" href="index.php"><img src="../public/assets/img/cv.png" alt=""></a><hr>
 <?php echo $form->divStart('research_question');
 ?> <p>Connectez vous<p>
 <?php echo $form->divEnd();
@@ -32,7 +32,7 @@ if (!empty($errors['password'])) {
 echo $form->divStart('sub');
 echo $form->submit();
 echo $form->divEnd();
-
+?> <a href="index.php?page=forgot">Mot de passe oublié ?</a> <?php
 echo $form->divEnd();
 echo $form->divEnd();
 echo $form->divEnd();

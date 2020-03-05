@@ -9,7 +9,7 @@ use App\App;
 class UserModel extends Model
 {
     protected static $table = 'users';
-    private int $id;
+    private $id;
     private $name;
     private $firstname;
     private $mail;
@@ -18,6 +18,7 @@ class UserModel extends Model
     private $modified_at;
     private $roles;
     private $token;
+
 
     public static function insertUser(string $name, string $firstname, string $mail, string $password): void
     {
@@ -43,10 +44,45 @@ class UserModel extends Model
         return $randomString;
     }
 
+
+    public static function findAllUsers()
+    {
+        return App::getDatabase()->query("SELECT * FROM " . self::getTable() . " ", get_called_class());
+    }
+
+    public static function usersEdit(int $id, $post)
+    {
+        $token = UserModel::generateToken(255);
+        $sql = "UPDATE " . self::getTable() . " SET name=?, firstname=?, email=?, modified_at=NOW(), roles=?, token=? WHERE id=?";
+        var_dump($sql);
+        App::getDatabase()->prepareInsert($sql, [$post['name'], $post['firstname'], $post['email'],
+            $post['roles'], $token, $_GET['id']]);
+    }
+
+    public static function delete($id,$columId = 'id')
+    {
+        App::getDatabase()->prepareInsert("DELETE FROM " . self::getTable() . " WHERE ".$columId." = ?",[$id]);
+    }
+
+
+
+    public function checkId($token)
+    {
+        $sql = "SELECT id FROM " .self::getTable() . " WHERE token=?";
+        return App::getDatabase()->prepare($sql, [$token], get_called_class(), true);
+    }
+
+    public static function changePwd($password, $token, $id)
+    {
+        $sql = "UPDATE " . self::getTable() . " SET pass=?, token=? WHERE id=?";
+        App::getDatabase()->prepareInsert($sql, [$password, $token, $id]);
+    }
+
+
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }

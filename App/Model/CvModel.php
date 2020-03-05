@@ -8,7 +8,7 @@ use App\Service\Model;
 
 class CvModel extends Model
 {
-    protected static $table = 'ttest';
+    protected static $table = 'curiculum';
 
     protected $id;
     protected $name;

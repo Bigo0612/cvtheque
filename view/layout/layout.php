@@ -17,7 +17,7 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/logo.png" alt=""></a>
+            <a class="logo" href="<?= $view->path('home'); ?>"><img src="../public/assets/img/cv.png" alt=""></a>
             <form class="form">
                 <div class="search">
                     <input type="text" class="searchJob" placeholder="Search jobs">
@@ -52,17 +52,30 @@
                     </select>
                 </li>
 
+                <?php if (empty($_SESSION)) { ?>
                 <li class="inscription">
                         <a class="inscription-link" href="<?= $view->path('register'); ?>">Inscription</a>
                         <i class="fas fa-user-friends"></i>
                 </li>
-
                 <li class="connexion">
-                        <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
+                     <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
+                </li>
+                <?php } elseif ($_SESSION['role'] == "3") { ?>
+                <li class="connexion">
+                    <a href="<?= $view->path('logout') ?>">Déconnexion</a>
                 </li>
                 <li>
                     <a href="<?= $view->path('admin') ?>">Admin</a>
                 </li>
+                <?php } else { ?>
+                <li class="connexion">
+                    <a href="<?= $view->path('account') ?>">Mon compte</a>
+                </li>
+                <li class="connexion">
+                    <a href="<?= $view->path('logout') ?>">Déconnexion</a>
+                </li>
+                <?php } ?>
+
                 <li><a href="<?= $view->path('cv'); ?>">CV</a></li>
             </ul>
         </div>

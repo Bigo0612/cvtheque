@@ -21,22 +21,48 @@ elseif ($page == 'cv') {
     $controller = new \App\Controller\CvController();
     $controller->cv();
 }
+elseif ($page == 'cv') {
+    $controller = new \App\Controller\UserController();
+    $controller->cv();
+}
+elseif ($page == 'account') {
+    $controller = new \App\Controller\UserController();
+    $controller->account();
+}
+elseif ($page == 'logout') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->logout();
+}
 elseif ($page == 'mentionsLegales') {
-    $controller = new \App\Controller\defaultController();
+    $controller = new \App\Controller\DefaultController();
     $controller->mentionsLegales();
 }
 elseif ($page == 'cgu') {
-    $controller = new \App\Controller\defaultController();
+    $controller = new \App\Controller\DefaultController();
     $controller->cgu();
 }
 elseif ($page == 'databasecv') {
-    $controller = new \App\Controller\defaultController();
+    $controller = new \App\Controller\DefaultController();
     $controller->databasecv();
 }
 elseif ($page == 'admin') {
     $controller = new \App\Controller\AdminController();
     $controller->index();
 }
+
+elseif ($page == 'usersEdit') {
+    $controller = new \App\Controller\UserController();
+    $controller->usersEditById($_GET['id']);
+}
+elseif ($page == 'delete') {
+    $controller = new \App\Controller\UserController();
+    $controller->deleteUserById($_GET['id']);
+}
+elseif ($page == 'singleUser') {
+    $controller = new \App\Controller\UserController();
+    $controller->single($_GET['id']);
+}
+
 elseif ($page == 'edit') {
     $controller = new \App\Controller\AdminController();
     $controller->editUserById($_GET['id']);
@@ -48,6 +74,14 @@ elseif ($page == 'delete') {
 elseif ($page == 'single') {
     $controller = new \App\Controller\AdminController();
     $controller->single($_GET['id']);
+}
+elseif ($page == 'forgot') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->forgot();
+}
+elseif ($page = 'changepwd') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->changePwd();
 }
 else {
     $controller = new App\Controller\DefaultController();

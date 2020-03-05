@@ -1,10 +1,10 @@
 <?php
 
 return array(
-    'db_name'   => 'dtest',
+    'db_name'   => 'cvtek',
     'db_user'   => 'root',
-    'db_pass'   => 'root',
+    'db_pass'   => '',
     'db_host'   => 'localhost',
 
-    'directory' => '/web/cvtek/view/'
+    'directory' => '/cvtek/view/'
 );
