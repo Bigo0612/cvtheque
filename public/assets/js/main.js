@@ -546,7 +546,6 @@ function changeColor11(obj)
 {
     document.getElementById("draggable8").style.backgroundColor = "#"+obj.value;
 }
-
 function changeColor12(obj)
 {
     document.getElementById("h20").style.color = "#"+obj.value;
