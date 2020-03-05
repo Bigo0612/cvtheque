@@ -50,6 +50,26 @@ class UserModel extends Model
         return $randomString;
     }
 
+    public static function findAllUsers()
+    {
+        return App::getDatabase()->query("SELECT * FROM " . self::getTable() . " ", get_called_class());
+    }
+
+    public static function usersEdit(int $id, $post)
+    {
+        $token = UserModel::generateToken(255);
+        $sql = "UPDATE " . self::getTable() . " SET name=?, firstname=?, email=?, modified_at=NOW(), roles=?, token=? WHERE id=?";
+        var_dump($sql);
+        App::getDatabase()->prepareInsert($sql, [$post['name'], $post['firstname'], $post['email'],
+            $post['roles'], $token, $_GET['id']]);
+    }
+
+    public static function delete($id,$columId = 'id')
+    {
+        App::getDatabase()->prepareInsert("DELETE FROM " . self::getTable() . " WHERE ".$columId." = ?",[$id]);
+    }
+
+
     /**
      * @return int
      */

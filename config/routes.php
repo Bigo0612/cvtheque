@@ -21,6 +21,10 @@ elseif ($page == 'cv') {
     $controller = new \App\Controller\CvController();
     $controller->cv();
 }
+elseif ($page == 'cv') {
+    $controller = new \App\Controller\UserController();
+    $controller->cv();
+}
 elseif ($page == 'account') {
     $controller = new \App\Controller\UserController();
     $controller->account();
@@ -41,11 +45,21 @@ elseif ($page == 'databasecv') {
     $controller = new \App\Controller\DefaultController();
     $controller->databasecv();
 }
-
-
 elseif ($page == 'admin') {
     $controller = new \App\Controller\AdminController();
     $controller->index();
+}
+elseif ($page == 'usersEdit') {
+    $controller = new \App\Controller\UserController();
+    $controller->usersEditById($_GET['id']);
+}
+elseif ($page == 'delete') {
+    $controller = new \App\Controller\UserController();
+    $controller->deleteUserById($_GET['id']);
+}
+elseif ($page == 'singleUser') {
+    $controller = new \App\Controller\UserController();
+    $controller->single($_GET['id']);
 }
 else {
     $controller = new App\Controller\DefaultController();
