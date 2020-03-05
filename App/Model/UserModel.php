@@ -19,10 +19,11 @@ class UserModel extends Model
     private $roles;
     private $token;
 
+
     public static function insertUser(string $name, string $firstname, string $mail, string $password): void
     {
         $token = UserModel::generateToken(255);
-        $sql = "INSERT INTO " . self::getTable() . " VALUES(NULL,?,?,?,?,NOW(),NULL,'user',?)";
+        $sql = "INSERT INTO " . self::getTable() . " VALUES(NULL,?,?,?,?,NOW(),NULL,1,?)";
         App::getDatabase()->prepareInsert($sql, [$name, $firstname, $mail, $password, $token]);
     }
 
@@ -30,13 +31,6 @@ class UserModel extends Model
     {
         $sql = "SELECT * FROM " . self::getTable() . " WHERE email= ?";
         return App::getDatabase()->prepare($sql, [$email], get_called_class(),true);
-    }
-
-    public static function update($id,$post): void
-    {
-        $sql = "UPDATE ". self::getTable() ." SET email = ?,nom = ?,fruit_id = ?, modified_at = NOW() WHERE id = ?";
-        App::getDatabase()->prepareInsert($sql,[$post['name'],$post['firstname'],$post['mail'],
-            $post['password'], $post['created_at'], $post['modified_at'], $post['roles'], $post['token']]);
     }
 
     public static function generateToken($length)
@@ -49,6 +43,7 @@ class UserModel extends Model
         }
         return $randomString;
     }
+
 
     public static function findAllUsers()
     {
@@ -70,10 +65,24 @@ class UserModel extends Model
     }
 
 
+
+    public function checkId($token)
+    {
+        $sql = "SELECT id FROM " .self::getTable() . " WHERE token=?";
+        return App::getDatabase()->prepare($sql, [$token], get_called_class(), true);
+    }
+
+    public static function changePwd($password, $token, $id)
+    {
+        $sql = "UPDATE " . self::getTable() . " SET pass=?, token=? WHERE id=?";
+        App::getDatabase()->prepareInsert($sql, [$password, $token, $id]);
+    }
+
+
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }

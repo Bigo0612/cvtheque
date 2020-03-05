@@ -49,6 +49,7 @@ elseif ($page == 'admin') {
     $controller = new \App\Controller\AdminController();
     $controller->index();
 }
+
 elseif ($page == 'usersEdit') {
     $controller = new \App\Controller\UserController();
     $controller->usersEditById($_GET['id']);
@@ -60,6 +61,27 @@ elseif ($page == 'delete') {
 elseif ($page == 'singleUser') {
     $controller = new \App\Controller\UserController();
     $controller->single($_GET['id']);
+}
+
+elseif ($page == 'edit') {
+    $controller = new \App\Controller\AdminController();
+    $controller->editUserById($_GET['id']);
+}
+elseif ($page == 'delete') {
+    $controller = new \App\Controller\AdminController();
+    $controller->deleteUserById($_GET['id']);
+}
+elseif ($page == 'single') {
+    $controller = new \App\Controller\AdminController();
+    $controller->single($_GET['id']);
+}
+elseif ($page == 'forgot') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->forgot();
+}
+elseif ($page = 'changepwd') {
+    $controller = new \App\Controller\DefaultController();
+    $controller->changePwd();
 }
 else {
     $controller = new App\Controller\DefaultController();

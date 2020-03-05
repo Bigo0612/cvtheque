@@ -2,6 +2,10 @@
     <?= $message; ?>
 </h1>
 
+<?php use App\Service\View;
+$c = new View();
+?>
+
 <section class="research">
     <div class="wrap">
         <div class="frame">
@@ -16,7 +20,7 @@
                         <input type="text" class="searchJob2" placeholder="Search jobs">
                         <div class="btn3">
                             <button class="btn4" type="button">
-                                <a href="databasecv.php"><i  class="fas fa-search"></i></a>
+                                <a href="<?= $c->path('databasecv') ?>"><i  class="fas fa-search"></i></a>
                             </button>
                         </div>
                     </div>
