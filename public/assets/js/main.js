@@ -164,7 +164,7 @@ $('#ajout_comp').on('click',function(){
 
     $('#moin').remove();
     $('#img14').after('<img id="moin" src="assets/img/icons8-effacer-26.png"/>');
-    if($('#ajout_comp').before('<input class="cv" id="nom'+total+'" name="comp[]" type="text" value=""/><span class="error"></span>') == ''){
+    if($('#ajout_comp').before('<input class="cv2" id="nom'+total+'" name="comp[]" type="text" value=""/><span class="error"></span>') == ''){
 
     } else {
         $('#moin').on('click', function () {
@@ -202,7 +202,7 @@ $('#ajout_lang').on('click',function(){
 
     $('#moin2').remove();
     $('#img15').after('<img id="moin2" src="assets/img/icons8-effacer-26.png"/>');
-    if($('#ajout_lang').before('<input class="cv" id="lang'+total+'" name="lang[]" type="text" value=""/><span class="error"></span>') == ''){
+    if($('#ajout_lang').before('<input class="cv2" id="lang'+total+'" name="lang[]" type="text" value=""/><span class="error"></span>') == ''){
 
     } else {
         $('#moin2').on('click', function () {
@@ -240,7 +240,7 @@ $('#ajout_hob').on('click',function(){
 
     $('#moin3').remove();
     $('#img16').after('<img id="moin3" src="assets/img/icons8-effacer-26.png"/>');
-    if($('#ajout_hob').before('<input class="cv" id="hob'+total+'" name="hob[]" type="text" value=""/><span class="error"></span>') == ''){
+    if($('#ajout_hob').before('<input class="cv2" id="hob'+total+'" name="hob[]" type="text" value=""/><span class="error"></span>') == ''){
 
     } else {
         $('#moin3').on('click', function () {
@@ -343,16 +343,16 @@ $('#ajout_exp').on('click',function(){
     $('#ajout_exp').after('<did id="sup_exp"><label id="moin7" for="experience_aj"><img class="sup" src="assets/img/icons8-effacer-26.png"/></label></did>');
     if($('#ajout_exp').before('<div id="experience[]" class="experience" '+
         '<h3 id="exp_h3_'+total+'">Veuillez rentrer vos experiences professionnelle</h3>' +
-        '<input class="cv" id="exp'+total+'" name="exp_pro" type="text" value=""/>' +
+        '<input class="cv2" id="exp'+total+'" name="exp_pro" type="text" value=""/>' +
         '<span class="error"></span>' +
         '<h3 id="exp_d_h3_'+total+'">Veuillez rentrer date du debut</h3>' +
-        '<input class="cv" id="exp_d_'+total+'" name="exp_d" type="date" value=""/>' +
+        '<input class="cv2" id="exp_d_'+total+'" name="exp_d" type="date" value=""/>' +
         '<span class="error"></span>' +
         '<h3 id="exp_f_h3_'+total+'">Veuillez rentrer date de fin</h3>' +
-        '<input class="cv" id="exp_f_'+total+'" name="exp_f" type="date" value=""/>' +
+        '<input class="cv2" id="exp_f_'+total+'" name="exp_f" type="date" value=""/>' +
         '<span class="error"></span>' +
         '<h3 id="exp_l_h3_'+total+'">Veuillez rentrer l\'etablissement</h3>' +
-        '<input class="cv" id="exp_l_'+total+'" name="exp_l" type="text" value=""/>' +
+        '<input class="cv2" id="exp_l_'+total+'" name="exp_l" type="text" value=""/>' +
         '<span class="error"></span>') == ''){
     } else {
         $('#moin7').on('click', function () {
@@ -435,13 +435,13 @@ $('#ajout_diplome').on('click',function(){
     $('#ajout_diplome').after('<did id="sup_diplome"><label id="moin11" ><img class="sup" src="assets/img/icons8-effacer-26.png"/></label></did>');
     if($('#ajout_diplome').before('<div id="exam[]" class="exam" '+
         '<h3 id="diplome_h3_'+total+'">Veuillez rentrer vos Diplomes</h3>' +
-        '<input class="cv" id="diplome'+total+'" name="diplome" type="text" value=""/>' +
+        '<input class="cv2" id="diplome'+total+'" name="diplome" type="text" value=""/>' +
         '<span class="error"></span>' +
         '<h3 id="diplome_a_h3_'+total+'">Veuillez rentrer l\'année de l\'obtention</h3>' +
-        '<input class="cv" id="exp_a_'+total+'" name="exp_a" type="date" value=""/>' +
+        '<input class="cv2" id="exp_a_'+total+'" name="exp_a" type="date" value=""/>' +
         '<span class="error"></span>' +
         '<h3 id="diplome_l_h3_'+total+'">Veuillez rentrer l\'etablissement</h3>' +
-        '<input class="cv" id="diplome_l_'+total+'" name="diplome_l" type="text" value=""/>' +
+        '<input class="cv2" id="diplome_l_'+total+'" name="diplome_l" type="text" value=""/>' +
         '<span class="error"></span>') == ''){
 
     } else {

@@ -20,21 +20,21 @@ class CvController extends Controller
         $errors = array();
         $array = array(
             array('name' => 'nom', 'type' => 'text', 'h3' => 'votre nom', 'img' => 'img1', 'id_title' => 'title1'),
-            array('name' => 'prenom', 'type' => 'text', 'h3' => 'votre prenom', 'img' => 'img2', 'id_title' => 'title2'),
+            array('name' => 'prenom', 'type' => 'text', 'h3' => 'votre prénom', 'img' => 'img2', 'id_title' => 'title2'),
             array('name' => 'email', 'type' => 'email', 'h3' => 'votre email', 'img' => 'img3', 'id_title' => 'title3'),
-            array('name' => 'tel', 'type' => 'number', 'h3' => 'votre numero de telephone portable', 'img' => 'img4', 'id_title' => 'title4'),
+            array('name' => 'tel', 'type' => 'number', 'h3' => 'votre numéro de téléphone portable', 'img' => 'img4', 'id_title' => 'title4'),
             array('name' => 'adress', 'type' => 'text', 'h3' => 'votre adresse', 'img' => 'img5', 'id_title' => 'title5'),
-            array('name' => 'about', 'type' => 'about', 'h3' => 'vos motivation', 'img' => 'img6', 'id_title' => 'title6'),
-            array('name' => 'exp_pro', 'type' => 'text', 'h3' => 'vos experiences professionnelle', 'img' => 'img7', 'id_title' => 'title7'),
+            array('name' => 'about', 'type' => 'about', 'h3' => 'vos motivations', 'img' => 'img6', 'id_title' => 'title6'),
+            array('name' => 'exp_pro', 'type' => 'text', 'h3' => 'vos experiences professionnelles', 'img' => 'img7', 'id_title' => 'title7'),
             array('name' => 'exp_d', 'type' => 'date', 'h3' => 'date du début', 'img' => 'img8', 'id_title' => 'title8'),
             array('name' => 'exp_f', 'type' => 'date', 'h3' => 'date de fin', 'img' => 'img9', 'id_title' => 'title9'),
             array('name' => 'exp_l', 'type' => 'text', 'h3' => 'le nom de l\'établissement', 'img' => 'img10', 'id_title' => 'title10'),
-            array('name' => 'diplome', 'type' => 'text', 'h3' => 'vos diplomes', 'img' => 'img13', 'id_title' => 'title11'),
-            array('name' => 'diplome_a', 'type' => 'date', 'h3' => 'l\année de l\'obtention du diplome', 'img' => 'img11', 'id_title' => 'title12'),
+            array('name' => 'diplome', 'type' => 'text', 'h3' => 'vos diplômes', 'img' => 'img13', 'id_title' => 'title11'),
+            array('name' => 'diplome_a', 'type' => 'date', 'h3' => 'l\année de l\'obtention du diplôme', 'img' => 'img11', 'id_title' => 'title12'),
             array('name' => 'diplome_l', 'type' => 'text', 'h3' => 'l\'établissement', 'img' => 'img12', 'id_title' => 'title13'),
             array('name' => 'comp[]', 'type' => 'text', 'h3' => 'vos compétances', 'img' => 'img14', 'id_title' => 'title14'),
-            array('name' => 'lang[]', 'type' => 'text', 'h3' => 'le niveau et langues métrisées', 'img' => 'img15', 'id_title' => 'title15'),
-            array('name' => 'hob[]', 'type' => 'text', 'h3' => 'vos hobbys', 'img' => 'img16', 'id_title' => 'title16')
+            array('name' => 'lang[]', 'type' => 'text', 'h3' => 'le niveau et langues maîtrisées', 'img' => 'img15', 'id_title' => 'title15'),
+            array('name' => 'hob[]', 'type' => 'text', 'h3' => 'vos hobbies', 'img' => 'img16', 'id_title' => 'title16')
         );
 
         $formcv = new Form();
@@ -47,14 +47,14 @@ class CvController extends Controller
             if ($array[$i]['type'] === 'number'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= '<div class="form-control">';
-                $html .= '<input class="cv" id="tel" name="tel" type="number" Pattern="^0[0-9]{9}"/>';
+                $html .= '<input class="cv2" id="tel" name="tel" type="number" Pattern="^0[0-9]{9}"/>';
                 $html .= '</div>';
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
             } elseif ($array[$i]['type'] === "about") {
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->textarea($array[$i]['name'],'cv');
+                $html .= $formcv->textarea($array[$i]['name'],'cv2');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
@@ -63,25 +63,25 @@ class CvController extends Controller
             } elseif ($array[$i]['name'] === 'exp_pro'){
                 $html .= '<div id="experience[]" class="experience">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('text','exp_pro','cv');
+                $html .= $formcv->input('text','exp_pro','cv2');
                 $html .= $formcv->label2('exp_pro','img7');
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('exp_pro');
             } elseif ($array[$i]['name'] === 'exp_d'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('date','exp_d','cv');
+                $html .= $formcv->input('date','exp_d','cv2');
                 $html .= $formcv->label2('exp_d','img8');
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('exp_f');
             }elseif ($array[$i]['name'] === 'exp_f'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('date','exp_f','cv');
+                $html .= $formcv->input('date','exp_f','cv2');
                 $html .= $formcv->label2('exp_f','img9');
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('exp_f');
             } elseif ($array[$i]['name'] === 'exp_l') {
                 $html .= $formcv->h3($array[$i]['h3'], $array[$i]['id_title']);
-                $html .= $formcv->input('text','exp_l','cv');
+                $html .= $formcv->input('text','exp_l','cv2');
                 $html .= $formcv->label2('exp_l', 'img10');
                 $html .= $formcv->error2('exp_l');
                 $html .= '</div>';
@@ -94,19 +94,19 @@ class CvController extends Controller
             }elseif ($array[$i]['name'] === 'diplome'){
                 $html .= '<div id="exam[]" class="exam">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('text','diplome','cv');
+                $html .= $formcv->input('text','diplome','cv2');
                 $html .= $formcv->label2('diplome','img11');
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('diplome');
             } elseif ($array[$i]['name'] === 'diplome_a'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('date','diplome_a','cv');
+                $html .= $formcv->input('date','diplome_a','cv2');
                 $html .= $formcv->label2('diplome_a','img12');
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('diplome_a');
             }elseif ($array[$i]['name'] === 'diplome_l'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input('text','diplome_l','cv');
+                $html .= $formcv->input('text','diplome_l','cv2');
                 $html .= $formcv->label2('diplome_l','img13');
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('diplome_l');
@@ -118,7 +118,7 @@ class CvController extends Controller
             } elseif ($array[$i]['name'] === 'comp[]'){
                 $html .= '<div id="qualifications">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv2');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
@@ -129,7 +129,7 @@ class CvController extends Controller
             } elseif ($array[$i]['name'] === 'lang[]'){
                 $html .= '<div id="language">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv2');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
@@ -140,7 +140,7 @@ class CvController extends Controller
             } elseif ($array[$i]['name'] === 'hob[]'){
                 $html .= '<div id="hobb">';
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv2');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
@@ -150,7 +150,7 @@ class CvController extends Controller
                 $html .= '</div>';
             }else{
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
-                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
+                $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv2');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);

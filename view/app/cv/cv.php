@@ -8,7 +8,7 @@
 
 
 <div id="demo">
-    <div class="double" id="profil">
+    <div class="double" id="profil2">
         <div class="photo_profil">
 
         </div>
