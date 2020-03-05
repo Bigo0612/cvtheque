@@ -605,3 +605,19 @@ function changeColor26(obj)
 {
     document.getElementById("sortable8").style.color = "#"+obj.value;
 }
+
+$('#button').on('click',function(){
+    var doc = new jsPDF ();
+    var elementHTML = $ ( '#demo' ) .html ();
+    var specialElementHandlers = {
+        '#elementH' : function ( élément, rendu ){
+            return  true ;
+        }
+    };
+    doc.fromHTML (elementHTML, 15 , 15 , {
+        'width' : 70 ,
+        'elementHandlers' : specialElementHandlers
+    });
+// Enregistrer le PDF
+    doc.save ( 'sample-document.pdf' );
+})

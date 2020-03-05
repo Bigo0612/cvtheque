@@ -7,7 +7,7 @@
 
 
 
-<div class="demo">
+<div id="demo">
     <div class="double" id="profil">
         <div class="photo_profil">
 
@@ -96,5 +96,5 @@
         <input class="jscolor" value="000000" id="textColor" onkeyup="changeColor25(this)" />
     </div>
 </form>
-
+<input type="submit" id="button" value="télecharger pdf"/>
 

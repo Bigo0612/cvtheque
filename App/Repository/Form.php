@@ -90,8 +90,8 @@ class Form
     }
     public function error2(string $name)
     {
-        $errors = !empty($name) ? 'veuillez renseigner le champ ' . $name : 'tr';
-        return '<span class="error">'.$errors.'</span>';
+        $error = !empty($this->errors[$name]) ? $this->errors[$name] : '';
+        return '<span class="error">'.$error.'</span>';
     }
 
     /**

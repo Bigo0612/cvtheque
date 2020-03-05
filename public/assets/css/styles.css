@@ -1,5 +1,5 @@
 @import "reset.css";
-/*@import "cvform.css";*/
+@import "cvform.css";
 
 body {
     background: #0F0F0F;

@@ -50,11 +50,13 @@ class CvController extends Controller
                 $html .= '<input class="cv" id="tel" name="tel" type="number" Pattern="^0[0-9]{9}"/>';
                 $html .= '</div>';
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
             } elseif ($array[$i]['type'] === "about") {
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->textarea($array[$i]['name'],'cv');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
 
 
@@ -63,16 +65,19 @@ class CvController extends Controller
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input('text','exp_pro','cv');
                 $html .= $formcv->label2('exp_pro','img7');
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('exp_pro');
             } elseif ($array[$i]['name'] === 'exp_d'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input('date','exp_d','cv');
                 $html .= $formcv->label2('exp_d','img8');
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('exp_f');
             }elseif ($array[$i]['name'] === 'exp_f'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input('date','exp_f','cv');
                 $html .= $formcv->label2('exp_f','img9');
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('exp_f');
             } elseif ($array[$i]['name'] === 'exp_l') {
                 $html .= $formcv->h3($array[$i]['h3'], $array[$i]['id_title']);
@@ -80,6 +85,7 @@ class CvController extends Controller
                 $html .= $formcv->label2('exp_l', 'img10');
                 $html .= $formcv->error2('exp_l');
                 $html .= '</div>';
+                $html .= '<div class="clear"></div>';
                 $html .= '<div id="ajout_exp">';
                 $html .= $formcv->label2('experience_aj','image1');
                 $html .= '</div>';
@@ -90,18 +96,22 @@ class CvController extends Controller
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input('text','diplome','cv');
                 $html .= $formcv->label2('diplome','img11');
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('diplome');
             } elseif ($array[$i]['name'] === 'diplome_a'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input('date','diplome_a','cv');
                 $html .= $formcv->label2('diplome_a','img12');
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('diplome_a');
             }elseif ($array[$i]['name'] === 'diplome_l'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input('text','diplome_l','cv');
                 $html .= $formcv->label2('diplome_l','img13');
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2('diplome_l');
                 $html .= '</div>';
+                $html .= '<div class="clear"></div>';
                 $html .= '<div id="ajout_diplome">';
                 $html .= $formcv->label2('diplome_aj','image2');
                 $html .= '</div>';
@@ -110,6 +120,7 @@ class CvController extends Controller
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
                 $html .= '</div>';
                 $html .= '<div id="ajout_comp">';
@@ -120,6 +131,7 @@ class CvController extends Controller
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
                 $html .= '</div>';
                 $html .= '<div id="ajout_lang">';
@@ -130,6 +142,7 @@ class CvController extends Controller
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
                 $html .= '</div>';
                 $html .= '<div id="ajout_hob">';
@@ -139,6 +152,7 @@ class CvController extends Controller
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= $formcv->input($array[$i]['type'],$array[$i]['name'],'cv');
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
+                $html .= '<div class="clear"></div>';
                 $html .= $formcv->error2($array[$i]['name']);
             }
         }
@@ -147,7 +161,7 @@ class CvController extends Controller
         $html .= $formcv->divEnd();
         $html .= $formcv->divEnd();
 
-        var_dump($array[0]['name']);
+
 
         if(!empty($_POST['submitted'])) {
 

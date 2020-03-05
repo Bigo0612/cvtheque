@@ -10,6 +10,8 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+
     <title>cvtheque</title>
 </head>
 <body>
@@ -99,6 +101,6 @@
 <script src="../public/assets/js/main.js"></script>
 <script src="https://kit.fontawesome.com/5d1ae1daad.js" crossorigin="anonymous"></script>
 <script src="../public/assets/js/jscolor.js"></script>
-
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 </body>
 </html>
