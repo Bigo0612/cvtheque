@@ -40,7 +40,7 @@ class CvController extends Controller
         $html = $formcv->divStart('wrap2');
         $html .= $formcv->divStart('frame');
         $html .= $formcv->divStart('research_executive');
-        $html .= '<a class="logo2" href="index.php"><img src="../public/assets/img/logo.png" alt=""></a><hr>';
+        $html .= '<a class="logo2" href="index.php"><img src="../public/assets/img/cv.png" alt=""></a><hr>';
         for ($i=0; $i < count($array); $i++){
 
             if ($array[$i]['type'] === 'tel'){
