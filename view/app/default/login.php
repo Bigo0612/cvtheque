@@ -7,7 +7,7 @@ echo $form->divStart('research');
 echo $form->divStart('wrap');
 echo $form->divStart('frame');
 echo $form->divStart('research_executive');
-?> <a class="logo2" href="index.php"><img src="../public/assets/img/logo.png" alt=""></a><hr>
+?> <a class="logo2" href="index.php"><img src="../public/assets/img/cv.png" alt=""></a><hr>
 <?php echo $form->divStart('research_question');
 ?> <p>Connectez vous<p>
 <?php echo $form->divEnd();
