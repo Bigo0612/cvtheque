@@ -62,7 +62,7 @@ class UserController extends Controller
 
             if ($v->IsValid($errors) == true) {
                 $user = UserModel::userLogin($post['mail']);
-                if ($user && $user->email === $post['mail'] && password_verify($post['password'], $user->pass)) {
+                if ($user->email === $post['mail'] && password_verify($post['password'], $user->pass)) {
                     $_SESSION = array(
                         'id'    => $user->id,
                         'nom'   => $user->name,
@@ -71,6 +71,7 @@ class UserController extends Controller
                         'email' => $user->email,
                         'ip'    => $_SERVER['REMOTE_ADDR']
                     );
+                    header('Location: index.php?page=home');
                 } else {
                         $errors['password'] = 'Mot de passe ou mail incorrect';
                 }

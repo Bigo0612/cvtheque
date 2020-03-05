@@ -32,6 +32,6 @@ class CvModel extends Model
     {
         $sql = " INSERT INTO " . self::getTable() . " VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NULL,NULL)";
         die($sql);
-        return App::getDatabase()->prepareInsert($sql,[$name,$firstname,$mail,$phone_number,$adress,$about,$experience,$experience_date_start,$experience_date_end,$exeperience_desc,$skills,$lang,$hob,$id_users]);
+        App::getDatabase()->prepareInsert($sql,[$name,$firstname,$mail,$phone_number,$adress,$about,$experience,$experience_date_start,$experience_date_end,$exeperience_desc,$skills,$lang,$hob,$id_users]);
     }
 }

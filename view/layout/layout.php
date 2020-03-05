@@ -61,7 +61,7 @@
                 <li class="connexion">
                      <a class="connexion-link" href="<?= $view->path('login'); ?>">Connexion</a>
                 </li>
-                <?php } elseif ($_SESSION['role'] == "admin") { ?>
+                <?php } elseif ($_SESSION['role'] == "3") { ?>
                 <li class="connexion">
                     <a href="<?= $view->path('logout') ?>">Déconnexion</a>
                 </li>
