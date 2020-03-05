@@ -1,7 +1,7 @@
 <h1>
     <?= $title ?>
 </h1>
-<form action="" method="post">
+<form action="index.php?page=cv" method="post">
 <?= $html ?>
 </form>
 

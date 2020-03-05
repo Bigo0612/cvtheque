@@ -8,6 +8,7 @@ use App\Model\CvModel;
 use App\Service\Controller;
 use App\Repository\Form;
 use App\Repository\Validation;
+use App\Controller\PDO;
 
 class CvController extends Controller
 {
@@ -21,7 +22,7 @@ class CvController extends Controller
             array('name' => 'nom', 'type' => 'text', 'h3' => 'votre nom', 'img' => 'img1', 'id_title' => 'title1'),
             array('name' => 'prenom', 'type' => 'text', 'h3' => 'votre prenom', 'img' => 'img2', 'id_title' => 'title2'),
             array('name' => 'email', 'type' => 'email', 'h3' => 'votre email', 'img' => 'img3', 'id_title' => 'title3'),
-            array('name' => 'tel', 'type' => 'tel', 'h3' => 'votre numero de telephone portable', 'img' => 'img4', 'id_title' => 'title4'),
+            array('name' => 'tel', 'type' => 'number', 'h3' => 'votre numero de telephone portable', 'img' => 'img4', 'id_title' => 'title4'),
             array('name' => 'adress', 'type' => 'text', 'h3' => 'votre adresse', 'img' => 'img5', 'id_title' => 'title5'),
             array('name' => 'about', 'type' => 'about', 'h3' => 'vos motivation', 'img' => 'img6', 'id_title' => 'title6'),
             array('name' => 'exp_pro', 'type' => 'text', 'h3' => 'vos experiences professionnelle', 'img' => 'img7', 'id_title' => 'title7'),
@@ -43,10 +44,10 @@ class CvController extends Controller
         $html .= '<a class="logo2" href="index.php"><img src="../public/assets/img/logo.png" alt=""></a><hr>';
         for ($i=0; $i < count($array); $i++){
 
-            if ($array[$i]['type'] === 'tel'){
+            if ($array[$i]['type'] === 'number'){
                 $html .= $formcv->h3($array[$i]['h3'],$array[$i]['id_title']);
                 $html .= '<div class="form-control">';
-                $html .= '<input class="cv" id="tel" name="tel" type="tel" Pattern="^0[0-9]{9}"/>';
+                $html .= '<input class="cv" id="tel" name="tel" type="number" Pattern="^0[0-9]{9}"/>';
                 $html .= '</div>';
                 $html .= $formcv->label2($array[$i]['name'],$array[$i]['img']);
                 $html .= $formcv->error2($array[$i]['name']);
@@ -146,48 +147,33 @@ class CvController extends Controller
         $html .= $formcv->divEnd();
         $html .= $formcv->divEnd();
 
+        var_dump($array[0]['name']);
+
         if(!empty($_POST['submitted'])) {
-            for ($i=0; $i < count($array); $i++) {
 
+            $nom = trim(strip_tags($_POST[$array[0]['name']]));
+            print_r($nom);
+            $prenom = trim(strip_tags($_POST[$array[1]['name']]));
+            $email = trim(strip_tags($_POST[$array[2]['name']]));
+
+            for ($i=0; $i < count($array); $i++) {
+               // $ins = new CvModel();
+               // $ins->insert($nom,$prenom,$email);
+               // $array[$i]['value'] = trim(strip_tags($_POST[$array[$i]['name']]));
 
 
                 $v = new Validation();
-                if ($array[$i]['type'] === 'text') {
-                    $errors = $v->validChamp($errors, $array[$i]['value'], $array[$i]['name'], 2, 120);
+              //  if ($array[$i]['type'] === 'text' OR $array[$i]['type'] === 'mail') {
+               //     $errors = $v->validChamp($errors, $array[$i]['value'], $array[$i]['name'], 2, 120);
 
-                } elseif ($array[$i]['type'] === 'mail') {
-                    $errors = $v->emailValid($array[$i]['name']);
-                } elseif ($array[$i]['type'] === 'tel') {
+               // } elseif ($array[$i]['type'] === 'tel') {
 
-                }
-
+               // }
             }
         }
-        if (!empty($_POST['submitted'])){
-            for ($i=0; $i < count($array); $i++) {
-                // faille xss
-                //$post = $this->cleanXss($_POST);
-                $array[$i]['value'] = trim(strip_tags($_POST[$array[$i]['name']]));
-                // echo $post['title'];
-                //valider chaque champ
-                // validation
-                $v = new Validation();
-                if ($array[$i]['type'] === 'text') {
-                    $errors = $v->validChamp($errors, $array[$i]['value'], $array[$i]['name'], 2, 120);
-
-                } elseif ($array[$i]['type'] === 'mail') {
-                    $errors = $v->emailValid($array[$i]['name']);
-                } elseif ($array[$i]['type'] === 'tel') {
-
-                }
-                // textValid
-
-                    CvModel::insert($array[$i]['value']);
 
 
-            }
-            //insertion en bdd
-        }
+
 
         $this->render('app.cv.cv', array(
             'title' => $title,

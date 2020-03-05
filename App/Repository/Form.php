@@ -106,7 +106,7 @@ class Form
 
     public function label2(string $name, $img)
     {
-        return '<label id="' .$img. '" for="'.$name.'"><img src="assets/img/plus.png"/></label>';
+        return '<label class="photo_label" id="' .$img. '" for="'.$name.'"><img class="img_ajout" src="assets/img/plus.png"/></label>';
     }
 
     /**
@@ -144,7 +144,7 @@ class Form
 
     public function h3(string $titre,string $id_title)
     {
-        return '<h3 id="'.$id_title.'">Veuillez rentrer '.$titre.'</h3>';
+        return '<h3 class="title_label" id="'.$id_title.'">Veuillez rentrer '.$titre.'</h3>';
     }
 
 

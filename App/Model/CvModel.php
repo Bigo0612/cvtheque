@@ -8,7 +8,7 @@ use App\Service\Model;
 
 class CvModel extends Model
 {
-    protected static $table = 'curiculum';
+    protected static $table = 'ttest';
 
     protected $id;
     protected $name;
@@ -28,10 +28,10 @@ class CvModel extends Model
     protected $modified_at;
     protected $id_users;
 
-    public static function insert($name,$firstname,$mail,$phone_number,$adress,$about,$experience,$experience_date_start,$experience_date_end,$exeperience_desc,$skills,$lang,$hob,$id_users)
+    public static function insert($name,$firstname,$mail)
     {
-        $sql = " INSERT INTO " . self::getTable() . " VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NULL,NULL)";
-        die($sql);
-        return App::getDatabase()->prepareInsert($sql,[$name,$firstname,$mail,$phone_number,$adress,$about,$experience,$experience_date_start,$experience_date_end,$exeperience_desc,$skills,$lang,$hob,$id_users]);
+        $sql = " INSERT INTO " . self::getTable() . " VALUES (NULL,?,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NOW(),NULL,NULL)";
+
+        return App::getDatabase()->prepareInsert($sql,[$name,$firstname,$mail]);
     }
 }

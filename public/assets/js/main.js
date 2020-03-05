@@ -83,7 +83,7 @@ $('#img3').on('click',function(){
         })
         var text = $('input[type=mail][name=email]').val();
         if (text != '') {
-            $('#sortable').append('<li>' + text + '</li>');
+            $('#sortable').append('<li class="licv">' + text + '</li>');
         } else {
 
         }
@@ -99,7 +99,7 @@ $('#img4').on('click',function(){
         })
         var text = $('input[type=tel][name=tel]').val();
         if (text != '') {
-            $('#sortable').append('<li>Portable: ' + text + '</li>');
+            $('#sortable').append('<li class="licv">Portable: ' + text + '</li>');
         } else {
 
         }
@@ -115,7 +115,7 @@ $('#img5').on('click',function(){
         })
         var text = $('input[type=text][name=adress]').val();
         if (text != '') {
-            $('#sortable').append('<li>Adresse: ' + text + '</li>');
+            $('#sortable').append('<li class="licv">Adresse: ' + text + '</li>');
         } else {
 
         }
@@ -152,7 +152,7 @@ $('#img14').on('click',function(){
 
         var text = $('input[name="comp[]"]').each(function(){
             if (text != '') {
-                $('#sortable5').append('<li>' + $(this).val() + '</li>');
+                $('#sortable5').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -190,7 +190,7 @@ $('#img15').on('click',function(){
 
         var text = $('input[name="lang[]"]').each(function(){
             if (text != '') {
-                $('#sortable6').append('<li>' + $(this).val() + '</li>');
+                $('#sortable6').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -228,7 +228,7 @@ $('#img16').on('click',function(){
 
         var text = $('input[name="hob[]"]').each(function(){
             if (text != '') {
-                $('#sortable7').append('<li>' + $(this).val() + '</li>');
+                $('#sortable7').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -266,7 +266,7 @@ $('#img7').on('click',function(){
 
         var text = $('input[name=exp_pro]').each(function(){
             if (text != '') {
-                $('#sortable3').append('<li>' + $(this).val() + '</li>');
+                $('#sortable3').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -287,7 +287,7 @@ $('#img8').on('click',function(){
 
         var text = $('input[name=exp_d]').each(function(){
             if (text != '') {
-                $('#sortable3').append('<li>' + $(this).val() + '</li>');
+                $('#sortable3').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -308,7 +308,7 @@ $('#img9').on('click',function(){
 
         var text = $('input[name=exp_f]').each(function(){
             if (text != '') {
-                $('#sortable3').append('<li>' + $(this).val() + '</li>');
+                $('#sortable3').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -329,7 +329,7 @@ $('#img10').on('click',function(){
 
         var text = $('input[name=exp_l]').each(function(){
             if (text != '') {
-                $('#sortable3').append('<li>' + $(this).val() + '</li>');
+                $('#sortable3').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -379,7 +379,7 @@ $('#img11').on('click',function(){
 
         var text = $('input[name=diplome]').each(function(){
             if (text != '') {
-                $('#sortable4').append('<li>' + $(this).val() + '</li>');
+                $('#sortable4').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -400,7 +400,7 @@ $('#img12').on('click',function(){
 
         var text = $('input[name=diplome_a]').each(function(){
             if (text != '') {
-                $('#sortable4').append('<li>' + $(this).val() + '</li>');
+                $('#sortable4').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
@@ -421,7 +421,7 @@ $('#img13').on('click',function(){
 
         var text = $('input[name=diplome_l]').each(function(){
             if (text != '') {
-                $('#sortable4').append('<li>' + $(this).val() + '</li>');
+                $('#sortable4').append('<li class="licv">' + $(this).val() + '</li>');
             } else {
 
             }
