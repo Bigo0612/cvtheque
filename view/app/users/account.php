@@ -10,8 +10,7 @@ $c = new \App\Service\Controller();
 
     <div class="cv">
         <button class="btncv">
-            <!--$view->path('cv');-->
-            <a href="cv.php" >Créer votre cv</a>
+            <a href="index.php?page=cv" >Créer votre cv</a>
         </button>
     </div>
 

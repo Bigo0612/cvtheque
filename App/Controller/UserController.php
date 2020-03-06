@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function register()
     {
-        $title = 'Inscription';
+        $title = '';
 
         $errors = array();
         $form = new Form($errors, 'post');
