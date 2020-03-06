@@ -15,7 +15,6 @@ $c = new \App\Service\Controller();
         </button>
     </div>
 
-
     <div class="profil">
         <div class="photo">
             <a class="logo3"><img src="../public/assets/img/cv.png" alt=""></a>
@@ -24,7 +23,6 @@ $c = new \App\Service\Controller();
             </button>
 
         </div>
-
 
         <div class="uplaodfichier">
 
@@ -68,19 +66,15 @@ $c = new \App\Service\Controller();
         </div>
     </div>
 
-
-
     <hr class="hr">
-
-
 
     <div class="infoperso">
         <div class="info">
             <p>Information personnel</p>
         </div>
 
-        <table class="compte">
-            <thead>
+        <table >
+            <thead class="compte">
             <tr class="info2">
                 <th class="table3">Nom:</th>
                 <th class="table3">Prenom:</th>
@@ -92,10 +86,7 @@ $c = new \App\Service\Controller();
                 <th class="table4">Téléphone:</th>
             </tr>
             </thead>
-        </table>
-
-        <table class="compte">
-            <tbody>
+            <tbody class="compte">
             <tr class="btngeneral">
                 <td>
                     <a href="index.php?page=single&id=" class="btnprimary">Voir</a>

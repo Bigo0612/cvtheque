@@ -46,8 +46,10 @@ class AdminController extends Controller
 
     public function deleteUserById($id)
     {
-        AdminModel::delete($id);
-        header('Location: index.php?page=admin');
+        if ($this->ifExist($id)) {
+            AdminModel::delete($id);
+            header('Location: index.php?page=admin');
+        }
     }
 
     private function ifExist($id){

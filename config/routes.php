@@ -54,10 +54,6 @@ elseif ($page == 'usersEdit') {
     $controller = new \App\Controller\UserController();
     $controller->usersEditById($_GET['id']);
 }
-elseif ($page == 'delete') {
-    $controller = new \App\Controller\UserController();
-    $controller->deleteUserById($_GET['id']);
-}
 elseif ($page == 'singleUser') {
     $controller = new \App\Controller\UserController();
     $controller->single($_GET['id']);
