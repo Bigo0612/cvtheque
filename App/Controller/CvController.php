@@ -14,7 +14,7 @@ class CvController extends Controller
 {
     public function cv()
     {
-        $title = 'Le CV';
+        $title = '';
 
         $v = new Validation();
         $errors = array();
