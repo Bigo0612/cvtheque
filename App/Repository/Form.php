@@ -27,6 +27,10 @@ class Form
     {
         return '<div class="form-control">'.$html.'</div>';
     }
+    private function arround2($html)
+    {
+        return '<div class="form-control2">'.$html.'</div>';
+    }
 
     /**
      * @param $name string
@@ -54,7 +58,13 @@ class Form
             ($name,
                 $data).'">');
     }
-
+    public function input2($type,$name,$class = NULL,$data = null)
+    {
+        return $this->arround2('<input class="'.$class.'" type="'.$type.'" id="'.$name.'" name="'.$name.'" " placeholder="Veuillez renseigner ce champ." value="'
+            .$this->getValue
+            ($name,
+                $data).'">');
+    }
     /**
      * @param $name
      * @param $class string
@@ -63,7 +73,7 @@ class Form
      */
     public function textarea($name, $class = NULL, $data = null)
     {
-        return $this->arround('<textarea class="'.$class.'" name="'.$name.'">'.$this->getValue($name,$data).'</textarea>');
+        return $this->arround2('<textarea class="'.$class.'" name="'.$name.'">'.$this->getValue($name,$data).'</textarea>');
     }
 
     /**
