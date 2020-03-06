@@ -77,7 +77,6 @@
                     <a href="<?= $view->path('logout') ?>">Déconnexion</a>
                 </li>
                 <?php } ?>
-
                 <li><a href="<?= $view->path('cv'); ?>">CV</a></li>
             </ul>
         </div>

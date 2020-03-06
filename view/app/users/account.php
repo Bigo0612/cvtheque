@@ -18,7 +18,7 @@ $c = new \App\Service\Controller();
         <div class="photo">
             <a class="logo3"><img src="../public/assets/img/cv.png" alt=""></a>
             <button class="uplaod">
-                <a href="#">Uplaod</a>
+                <a href="#">Upload</a>
             </button>
 
         </div>
@@ -69,14 +69,14 @@ $c = new \App\Service\Controller();
 
     <div class="infoperso">
         <div class="info">
-            <p>Information personnel</p>
+            <p>Informations personnelles</p>
         </div>
 
         <table >
             <thead class="compte">
             <tr class="info2">
                 <th class="table3">Nom:</th>
-                <th class="table3">Prenom:</th>
+                <th class="table3">Prénom:</th>
                 <th class="table3">Age:</th>
             </tr>
             <tr class="info3">
